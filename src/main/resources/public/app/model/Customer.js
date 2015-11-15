@@ -17,6 +17,9 @@ Ext.define('SenchaCRM.model.Customer', {
         type: 'rest',
         url: '/customers',
         pageParam: '',
+        extraParams: {
+            size: 100
+        },
         reader: {
             rootProperty: 'content'
         },

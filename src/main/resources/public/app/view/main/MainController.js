@@ -46,6 +46,10 @@ Ext.define('SenchaCRM.view.main.MainController', {
 
     onDeleteButtonClick: function (grid, index) {
         grid.getStore().removeAt(index);
+    },
+
+    onSearchTriggerClick: function () {
+        Ext.Msg.alert('Hi');
     }
 
 });

@@ -7,15 +7,17 @@
 }
 
 .header {
-  height: 40px;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .main {
-  margin: 0 20px 0;
+  margin: 0 10px 0;
+  border-right: 1px solid #d0d0d0;
+  border-left: 1px solid #d0d0d0;
 }
 
 .footer {
-  height: 30px !important;
+  border-top: 1px solid #d0d0d0;
 }
 
 .cell-editing-delete-row:before {

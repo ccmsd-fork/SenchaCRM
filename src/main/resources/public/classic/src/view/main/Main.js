@@ -12,6 +12,7 @@ Ext.define('SenchaCRM.view.main.Main', {
     requires: [
         'Ext.container.Container',
         'Ext.form.Label',
+        'Ext.form.field.Text',
         'Ext.grid.Panel',
         'Ext.grid.column.Action',
         'Ext.grid.plugin.CellEditing',
@@ -48,6 +49,19 @@ Ext.define('SenchaCRM.view.main.Main', {
                     cls: 'app-title',
                     x: 20,
                     y: 13
+                },
+                {
+                    xtype: 'textfield',
+                    style: 'right:20',
+                    width: 400,
+                    style: 'top:6px;right:10px;',
+                    emptyText: 'Jump to a contact, case, deal, tag, or search...',
+                    triggers: {
+                        search: {
+                            cls: 'x-form-search-trigger',
+                            handler: 'onSearchTriggerClick'
+                        }
+                    }
                 }
             ]
         },
@@ -163,7 +177,7 @@ Ext.define('SenchaCRM.view.main.Main', {
             items: [
                 {
                     xtype: 'label',
-                    html: '<div align="center" style="margin-top:.5em;">© 2015 SenchaCRM</div>'
+                    html: '<div align="center" style="margin-top:.6em;">© 2015 SenchaCRM</div>'
                 }
             ]
         }
