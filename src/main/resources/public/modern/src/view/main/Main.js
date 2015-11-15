@@ -11,12 +11,53 @@ Ext.define('SenchaCRM.view.main.Main', {
 
     requires: [
         'Ext.MessageBox',
+        'Ext.dataview.List',
         'Ext.layout.Fit',
         'SenchaCRM.view.main.MainController',
         'SenchaCRM.view.main.MainModel'
     ],
 
     controller: 'main',
-    viewModel: 'main'
+    viewModel: 'main',
+
+    layout: 'fit',
+
+    items: [
+        {
+            xtype: 'titlebar',
+            title: '顧客リスト',
+            docked: 'top',
+            cls: 'header',
+            items: [
+                {
+                    xtype: 'button',
+                    iconCls: 'x-fa fa-list-ul'
+                }
+            ]
+        },
+        {
+            xtype: 'toolbar',
+            docked: 'bottom',
+            cls: 'app-toolbar',
+            layout: {
+                type: 'hbox',
+                pack: 'center'
+            },
+            items: [
+                {
+                    xtype: 'button',
+                    iconCls: 'x-fa fa-plus'
+                }
+            ]
+        },
+        {
+            xtype: 'list',
+            store: 'Customers',
+            itemTpl: '{lastName} {firstName}',
+            onItemDisclosure: function(record, btn, index) {
+                Ext.Msg.alert('Tap', 'Disclose more info for ' + record.get('firstName'), Ext.emptyFn);
+            }
+        }
+    ]
 
 });

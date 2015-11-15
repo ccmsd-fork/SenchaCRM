@@ -21,6 +21,7 @@ DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
 2. [Sencha Cmd 6+](https://www.sencha.com/products/extjs/cmd-download/)
 3. [Java SE Development Kit 8+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 4. [Maven 3+](https://maven.apache.org/download.cgi)
+5. [PostgreSQL 9+](http://www.postgresql.org/download/)
 
 ### DEVELOPMENT
 
@@ -29,9 +30,8 @@ DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
 
 ### OPTIONAL
 
-1. [PostgreSQL 9+](http://www.postgresql.org/download/)
+1. [WebStorm 11+](https://www.jetbrains.com/webstorm/download/)
 2. [Heroku Toolbelt](https://toolbelt.heroku.com/)
-3. [WebStorm 11](https://www.jetbrains.com/webstorm/download/)
 
 # GETTING STARTED
 
