@@ -9,6 +9,10 @@ Ext.define('SenchaCRM.view.main.MainController', {
 
     alias: 'controller.main',
 
+    requires: [
+        'SenchaCRM.model.Customer'
+    ],
+
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     },
@@ -17,5 +21,31 @@ Ext.define('SenchaCRM.view.main.MainController', {
         if (choice === 'yes') {
             //
         }
+    },
+
+    onAddButtonClick: function () {
+        var created = Ext.create('SenchaCRM.model.Customer');
+        var store = Ext.getStore('Customers');
+        store.insert(0, created);
+    },
+
+    onSaveButtonClick: function () {
+        var store = Ext.getStore('Customers');
+        Ext.Msg.confirm('SenchaCRM', '保存しますか？', function (btn) {
+            if (btn === 'yes') {
+                store.sync({
+                    success: function () {
+                        Ext.Msg.alert('SenchaCRM', '保存しました', function () {
+                            store.load();
+                        });
+                    }
+                });
+            }
+        });
+    },
+
+    onDeleteButtonClick: function (grid, index) {
+        grid.getStore().removeAt(index);
     }
+
 });

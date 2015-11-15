@@ -14,11 +14,13 @@ Ext.define('SenchaCRM.view.main.Main', {
         'Ext.form.Label',
         'Ext.grid.Panel',
         'Ext.grid.column.Action',
+        'Ext.grid.plugin.CellEditing',
         'Ext.layout.container.Absolute',
         'Ext.layout.container.Border',
         'Ext.layout.container.Fit',
         'Ext.layout.container.VBox',
         'Ext.plugin.Viewport',
+        'Ext.toolbar.Toolbar',
         'Ext.window.MessageBox',
         'SenchaCRM.view.main.MainController',
         'SenchaCRM.view.main.MainModel'
@@ -36,7 +38,7 @@ Ext.define('SenchaCRM.view.main.Main', {
     items: [
         {
             xtype: 'container',
-            height: 38,
+            height: 44,
             layout: 'absolute',
             cls: 'header',
             items: [
@@ -44,8 +46,8 @@ Ext.define('SenchaCRM.view.main.Main', {
                     xtype: 'label',
                     html: 'SENCHA CRM',
                     cls: 'app-title',
-                    x: 15,
-                    y: 10
+                    x: 20,
+                    y: 13
                 }
             ]
         },
@@ -55,39 +57,79 @@ Ext.define('SenchaCRM.view.main.Main', {
             cls: 'main',
             items: [
                 {
-                    title: 'CUSTOMER',
+                    title: '顧客リスト',
                     region: 'center',
                     layout: 'fit',
                     flex: 3,
+                    glyph: 'xf007@FontAwesome',
                     items: [
                         {
                             xtype: 'gridpanel',
                             store: 'Customers',
+                            plugins: {
+                                ptype: 'cellediting',
+                                clicksToEdit: 1
+                            },
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    items: [
+                                        {
+                                            text: '追加',
+                                            handler: 'onAddButtonClick',
+                                            iconCls: 'framing-buttons-add',
+                                            width: 100
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'bottom',
+                                    ui: 'footer',
+                                    layout: {
+                                        pack: 'end'
+                                    },
+                                    items: [
+                                        {
+                                            text: '保存',
+                                            glyph: 'xf0c7@FontAwesome',
+                                            handler: 'onSaveButtonClick',
+                                            width: 100
+                                        }
+                                    ]
+                                }
+                            ],
                             columns: [
                                 {
-                                    text: 'FIRST NAME',
-                                    dataIndex: 'firstName',
-                                    flex: 1
-                                },
-                                {
-                                    text: 'LAST NAME',
+                                    text: '名前（性）',
                                     dataIndex: 'lastName',
-                                    flex: 1
+                                    flex: 1,
+                                    editor: 'textfield'
                                 },
                                 {
-                                    text: 'AGE',
+                                    text: '名前（名）',
+                                    dataIndex: 'firstName',
+                                    flex: 1,
+                                    editor: 'textfield'
+                                },
+                                {
+                                    text: '年齢',
                                     dataIndex: 'age',
-                                    flex: 1
+                                    flex: 1,
+                                    editor: 'numberfield'
                                 },
                                 {
-                                    text: 'PHONE',
+                                    text: '電話番号',
                                     dataIndex: 'phone',
-                                    flex: 1
+                                    flex: 1,
+                                    editor: 'textfield'
                                 },
                                 {
-                                    text: 'GENDER',
+                                    text: '性別',
                                     dataIndex: 'gender',
-                                    flex: 1
+                                    flex: 1,
+                                    editor: 'textfield'
                                 },
                                 {
                                     xtype: 'actioncolumn',
@@ -95,7 +137,8 @@ Ext.define('SenchaCRM.view.main.Main', {
                                     menuDisabled: true,
                                     items: [
                                         {
-                                            iconCls: 'cell-editing-delete-row'
+                                            iconCls: 'cell-editing-delete-row',
+                                            handler: 'onDeleteButtonClick'
                                         }
                                     ]
                                 }
@@ -104,9 +147,10 @@ Ext.define('SenchaCRM.view.main.Main', {
                     ]
                 },
                 {
-                    title: 'MENU',
+                    title: 'メニュー',
                     region: 'west',
                     flex: 1,
+                    glyph: 'xf0ca@FontAwesome',
                     split: true,
                     collapsed: true
                 }
@@ -115,11 +159,11 @@ Ext.define('SenchaCRM.view.main.Main', {
         {
             xtype: 'container',
             cls: 'footer',
-            height: 30,
+            height: 33,
             items: [
                 {
                     xtype: 'label',
-                    html: '<div align="center">Copy</div>'
+                    html: '<div align="center" style="margin-top:.5em;">© 2015 SenchaCRM</div>'
                 }
             ]
         }

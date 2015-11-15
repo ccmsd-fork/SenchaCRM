@@ -19,6 +19,10 @@ Ext.define('SenchaCRM.model.Customer', {
         pageParam: '',
         reader: {
             rootProperty: 'content'
+        },
+        writer: {
+            writeAllFields: true,
+            writeRecordId: false
         }
     }
 

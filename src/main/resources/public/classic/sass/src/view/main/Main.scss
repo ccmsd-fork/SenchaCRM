@@ -11,15 +11,12 @@
 }
 
 .main {
-  margin: 0 10px 0;
+  margin: 0 20px 0;
 }
 
 .footer {
   height: 30px !important;
 }
-
-
-
 
 .cell-editing-delete-row:before {
   font: 16px/1 FontAwesome;
@@ -27,3 +24,8 @@
   content: "\f056";
 }
 
+.framing-buttons-add:before {
+  font: 16px/1 FontAwesome;
+  color: #81cb31;
+  content: "\f055";
+}
