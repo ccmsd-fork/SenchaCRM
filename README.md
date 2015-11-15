@@ -53,7 +53,7 @@ Run the Spring Boot application.
     $ cd SenchaCRM
     $ mvn spring-boot:run
 
-And, access to http://localhost:8080, you would see the Triplam application. :)
+Then, you can access SenchaCRM application via localhost:8080. 
 
 # AUTHOR
 

@@ -5,13 +5,13 @@
  */
 Ext.define('SenchaCRM.Application', {
     extend: 'Ext.app.Application',
-    
+
     name: 'SenchaCRM',
 
     stores: [
-        // TODO: add global / shared stores here
+        'Customers'
     ],
-    
+
     launch: function () {
         // TODO - Launch the application
     },

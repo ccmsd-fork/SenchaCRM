@@ -6,99 +6,124 @@
  * TODO - Replace this content of this view to suite the needs of your application.
  */
 Ext.define('SenchaCRM.view.main.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.Viewport',
     xtype: 'app-main',
 
     requires: [
+        'Ext.container.Container',
+        'Ext.form.Label',
+        'Ext.grid.Panel',
+        'Ext.grid.column.Action',
+        'Ext.layout.container.Absolute',
+        'Ext.layout.container.Border',
+        'Ext.layout.container.Fit',
+        'Ext.layout.container.VBox',
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
         'SenchaCRM.view.main.MainController',
-        'SenchaCRM.view.main.MainModel',
-        'SenchaCRM.view.main.List'
+        'SenchaCRM.view.main.MainModel'
     ],
 
     controller: 'main',
     viewModel: 'main',
 
-    ui: 'navigation',
-
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
-
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list'
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'stretch'
     },
 
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
-    },
-
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
-    },
-
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            plugins: 'responsive',
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
-                },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
+    items: [
+        {
+            xtype: 'container',
+            height: 38,
+            layout: 'absolute',
+            cls: 'header',
+            items: [
+                {
+                    xtype: 'label',
+                    html: 'SENCHA CRM',
+                    cls: 'app-title',
+                    x: 15,
+                    y: 10
                 }
-            }
+            ]
+        },
+        {
+            layout: 'border',
+            flex: 1,
+            cls: 'main',
+            items: [
+                {
+                    title: 'CUSTOMER',
+                    region: 'center',
+                    layout: 'fit',
+                    flex: 3,
+                    items: [
+                        {
+                            xtype: 'gridpanel',
+                            store: 'Customers',
+                            columns: [
+                                {
+                                    text: 'FIRST NAME',
+                                    dataIndex: 'firstName',
+                                    flex: 1
+                                },
+                                {
+                                    text: 'LAST NAME',
+                                    dataIndex: 'lastName',
+                                    flex: 1
+                                },
+                                {
+                                    text: 'AGE',
+                                    dataIndex: 'age',
+                                    flex: 1
+                                },
+                                {
+                                    text: 'PHONE',
+                                    dataIndex: 'phone',
+                                    flex: 1
+                                },
+                                {
+                                    text: 'GENDER',
+                                    dataIndex: 'gender',
+                                    flex: 1
+                                },
+                                {
+                                    xtype: 'actioncolumn',
+                                    width: 30,
+                                    menuDisabled: true,
+                                    items: [
+                                        {
+                                            iconCls: 'cell-editing-delete-row'
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: 'MENU',
+                    region: 'west',
+                    flex: 1,
+                    split: true,
+                    collapsed: true
+                }
+            ]
+        },
+        {
+            xtype: 'container',
+            cls: 'footer',
+            height: 30,
+            items: [
+                {
+                    xtype: 'label',
+                    html: '<div align="center">Copy</div>'
+                }
+            ]
         }
-    },
+    ]
 
-    items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
+
 });
