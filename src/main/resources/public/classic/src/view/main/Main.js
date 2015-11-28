@@ -23,6 +23,7 @@ Ext.define('SenchaCRM.view.main.Main', {
         'Ext.plugin.Viewport',
         'Ext.toolbar.Toolbar',
         'Ext.window.MessageBox',
+        'Ext.form.field.Number',
         'SenchaCRM.view.main.MainController',
         'SenchaCRM.view.main.MainModel'
     ],
