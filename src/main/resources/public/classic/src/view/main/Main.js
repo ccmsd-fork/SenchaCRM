@@ -98,23 +98,19 @@ Ext.define('SenchaCRM.view.main.Main', {
                                     ]
                                 },
                                 {
-                                    xtype: 'toolbar',
+                                    xtype: 'pagingtoolbar',
+                                    store: 'Customers',
                                     dock: 'bottom',
-                                    ui: 'footer',
-                                    layout: {
-                                        pack: 'end'
-                                    },
-                                    items: [
-                                        {
-                                            text: '保存',
-                                            glyph: 'xf0c7@FontAwesome',
-                                            handler: 'onSaveButtonClick',
-                                            width: 100
-                                        }
-                                    ]
+                                    displayInfo: true
                                 }
                             ],
                             columns: [
+                                {
+                                    text: 'ID',
+                                    dataIndex: 'id',
+                                    width: 50
+
+                                },
                                 {
                                     text: '名前（性）',
                                     dataIndex: 'lastName',
@@ -155,6 +151,24 @@ Ext.define('SenchaCRM.view.main.Main', {
                                             handler: 'onDeleteButtonClick'
                                         }
                                     ]
+                                }
+                            ]
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'bottom',
+                            ui: 'footer',
+                            layout: {
+                                pack: 'end'
+                            },
+                            items: [
+                                {
+                                    text: '保存',
+                                    glyph: 'xf0c7@FontAwesome',
+                                    handler: 'onSaveButtonClick',
+                                    width: 100
                                 }
                             ]
                         }

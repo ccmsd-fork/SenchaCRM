@@ -11,22 +11,6 @@ Ext.define('SenchaCRM.model.Customer', {
         {name: 'age', type: 'int'},
         {name: 'phone', type: 'string'},
         {name: 'gender', type: 'string'}
-    ],
-
-    proxy: {
-        type: 'rest',
-        url: '/customers',
-        pageParam: '',
-        extraParams: {
-            size: 100
-        },
-        reader: {
-            rootProperty: 'content'
-        },
-        writer: {
-            writeAllFields: true,
-            writeRecordId: false
-        }
-    }
+    ]
 
 });
