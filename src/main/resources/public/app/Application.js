@@ -9,6 +9,7 @@ Ext.define('SenchaCRM.Application', {
     name: 'SenchaCRM',
 
     stores: [
+        'Menus',
         'Customers'
     ],
 

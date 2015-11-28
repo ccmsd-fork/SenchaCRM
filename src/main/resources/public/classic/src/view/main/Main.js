@@ -69,6 +69,7 @@ Ext.define('SenchaCRM.view.main.Main', {
             layout: 'border',
             flex: 1,
             cls: 'main',
+            reference: 'mainpanel',
             items: [
                 {
                     title: '顧客リスト',
@@ -176,11 +177,24 @@ Ext.define('SenchaCRM.view.main.Main', {
                 },
                 {
                     title: 'メニュー',
+                    reference: 'menupanel',
                     region: 'west',
-                    flex: 1,
+                    width: 200,
                     glyph: 'xf0ca@FontAwesome',
                     split: true,
-                    collapsed: true
+                    collapsed: true,
+                    floatable: false,
+                    layout: 'fit',
+                    items: [
+                        {
+                            xtype: 'treepanel',
+                            rootVisible: false,
+                            store: 'Menus',
+                            listeners: {
+                                itemclick: 'onMenuItemClick'
+                            }
+                        }
+                    ]
                 }
             ]
         },

@@ -50,6 +50,29 @@ Ext.define('SenchaCRM.view.main.MainController', {
 
     onSearchTriggerClick: function () {
         Ext.Msg.alert('Hi');
+    },
+
+    /**
+     * @param {Ext.view.View} component
+     * @param {Ext.data.Model} record
+     * @param {HTMLElement} item
+     * @param {Number} index
+     * @param {Ext.event.Event} e
+     */
+    onMenuItemClick: function (component, record, item, index, e) {
+        if (!record.isLeaf()) {
+            return;
+        }
+
+        var panel = this.lookup('menupanel');
+        panel.setCollapsed(true);
+
+        var view = this.lookup('mainpanel');
+        view.mask('画面読込中...');
+        Ext.defer(function () {
+            view.unmask();
+        }, 500);
+
     }
 
 });
