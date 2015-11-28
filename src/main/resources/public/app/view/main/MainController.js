@@ -10,23 +10,21 @@ Ext.define('SenchaCRM.view.main.MainController', {
     alias: 'controller.main',
 
     requires: [
-        'SenchaCRM.model.Customer'
+        'SenchaCRM.model.Customer',
+        'SenchaCRM.view.main.AddPanel'
     ],
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
+    /**
+     * @param button
+     */
+    onAddButtonClick: function (button) {
+        var panel = Ext.widget('app-main-add-panel');
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
-    },
+        panel.show(button);
 
-    onAddButtonClick: function () {
-        var created = Ext.create('SenchaCRM.model.Customer');
-        var store = Ext.getStore('Customers');
-        store.insert(0, created);
+        //var created = Ext.create('SenchaCRM.model.Customer');
+        //var store = Ext.getStore('Customers');
+        //store.insert(0, created);
     },
 
     onSaveButtonClick: function () {
@@ -44,10 +42,17 @@ Ext.define('SenchaCRM.view.main.MainController', {
         });
     },
 
+    /**
+     * @param grid
+     * @param index
+     */
     onDeleteButtonClick: function (grid, index) {
         grid.getStore().removeAt(index);
     },
 
+    /**
+     *
+     */
     onSearchTriggerClick: function () {
         Ext.Msg.alert('Hi');
     },

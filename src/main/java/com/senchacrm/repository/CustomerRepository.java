@@ -10,9 +10,9 @@ import org.springframework.data.jpa.repository.Query;
 import com.senchacrm.domain.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    @Query("SELECT x FROM Customer x ORDER BY x.id ASC")
+    @Query("SELECT x FROM Customer x ORDER BY x.id DESC")
     List<Customer> findAllOrderByName();
 
-    @Query("SELECT x FROM Customer x ORDER BY x.id ASC")
+    @Query("SELECT x FROM Customer x ORDER BY x.id DESC")
     Page<Customer> findAllOrderByName(Pageable pageable);
 }
