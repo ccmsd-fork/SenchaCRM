@@ -73,7 +73,7 @@ Ext.define('SenchaCRM.view.main.Main', {
             reference: 'main-panel',
             items: [
                 {
-                    title: '顧客リスト',
+                    title: '担当者一覧',
                     region: 'center',
                     layout: 'fit',
                     flex: 3,
@@ -116,32 +116,59 @@ Ext.define('SenchaCRM.view.main.Main', {
                                 {
                                     text: '名前（性）',
                                     dataIndex: 'lastName',
-                                    flex: 1,
+                                    width: 100,
                                     editor: 'textfield'
                                 },
                                 {
                                     text: '名前（名）',
                                     dataIndex: 'firstName',
-                                    flex: 1,
+                                    width: 100,
                                     editor: 'textfield'
                                 },
                                 {
-                                    text: '年齢',
-                                    dataIndex: 'age',
+                                    text: '肩書き',
+                                    dataIndex: 'title',
+                                    width: 150,
+                                    editor: 'textfield'
+                                },
+                                {
+                                    text: '会社',
+                                    dataIndex: 'company',
                                     flex: 1,
-                                    editor: 'numberfield'
+                                    editor: 'textfield'
                                 },
                                 {
                                     text: '電話番号',
                                     dataIndex: 'phone',
+                                    width: 150,
+                                    editor: 'textfield'
+                                },
+                                {
+                                    text: 'Eメール',
+                                    dataIndex: 'email',
                                     flex: 1,
                                     editor: 'textfield'
                                 },
                                 {
-                                    text: '性別',
-                                    dataIndex: 'gender',
+                                    text: 'IM',
+                                    dataIndex: 'im',
                                     flex: 1,
-                                    editor: 'textfield'
+                                    editor: 'textfield',
+                                    hidden: true
+                                },
+                                {
+                                    text: 'Webサイト',
+                                    dataIndex: 'websites',
+                                    flex: 1,
+                                    editor: 'textfield',
+                                    hidden: true
+                                },
+                                {
+                                    text: '特記事項',
+                                    dataIndex: 'info',
+                                    flex: 1,
+                                    editor: 'textfield',
+                                    hidden: true
                                 },
                                 {
                                     xtype: 'actioncolumn',
