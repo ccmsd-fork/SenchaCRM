@@ -53,7 +53,9 @@ Run the Spring Boot application.
     $ cd SenchaCRM
     $ mvn spring-boot:run
 
-Then, you can access SenchaCRM application via localhost:8080. 
+Then, you can access SenchaCRM application via localhost:8080.
+
+**Don't forget to add `lombok.jar` to Eclipse project Java build path.**
 
 # AUTHOR
 

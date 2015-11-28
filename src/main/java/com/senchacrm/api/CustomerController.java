@@ -41,7 +41,7 @@ public class CustomerController {
     @RequestMapping(method = RequestMethod.POST)
     ResponseEntity<Customer> postCustomers(@RequestBody Customer customer, UriComponentsBuilder uriBuilder) {
         Customer created = customerService.create(customer);
-        URI location = uriBuilder.path("plans/{id}").buildAndExpand(created.getId()).toUri();
+        URI location = uriBuilder.path("customers/{id}").buildAndExpand(created.getId()).toUri();
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(location);
         return new ResponseEntity<>(created, headers, HttpStatus.CREATED);
