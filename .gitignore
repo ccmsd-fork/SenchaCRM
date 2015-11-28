@@ -1,14 +1,1 @@
-# Tools
-.settings
-.classpath
-.project
-.idea
-.DS_Store
-
-# Java
-target
-
-# Sencha
-src/main/resources/public/ext
-src/main/resources/public/build/development
-src/main/resources/public/build/temp
+/target/
