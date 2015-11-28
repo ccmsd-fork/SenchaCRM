@@ -1,8 +1,5 @@
 /**
- * This class is the controller for the main view for the application. It is specified as
- * the "controller" of the Main view class.
- *
- * TODO - Replace this content of this view to suite the needs of your application.
+ * SenchaCRM.view.main.MainController
  */
 Ext.define('SenchaCRM.view.main.MainController', {
     extend: 'Ext.app.ViewController',
@@ -10,15 +7,15 @@ Ext.define('SenchaCRM.view.main.MainController', {
     alias: 'controller.main',
 
     requires: [
-        'SenchaCRM.model.Customer',
-        'SenchaCRM.view.main.AddPanel'
+        'SenchaCRM.model.Person',
+        'SenchaCRM.view.main.AddForm'
     ],
 
     /**
      * @param button
      */
     onAddButtonClick: function (button) {
-        var panel = Ext.widget('app-main-add-panel');
+        var panel = Ext.widget('app-main-add-form');
 
         panel.show(button);
 
@@ -28,7 +25,7 @@ Ext.define('SenchaCRM.view.main.MainController', {
     },
 
     onSaveButtonClick: function () {
-        var store = Ext.getStore('Customers');
+        var store = Ext.getStore('People');
         Ext.Msg.confirm('SenchaCRM', '保存しますか？', function (btn) {
             if (btn === 'yes') {
                 store.sync({
@@ -69,10 +66,10 @@ Ext.define('SenchaCRM.view.main.MainController', {
             return;
         }
 
-        var panel = this.lookup('menupanel');
+        var panel = this.lookup('menu-panel');
         panel.setCollapsed(true);
 
-        var view = this.lookup('mainpanel');
+        var view = this.lookup('main-panel');
         view.mask('画面読込中...');
         Ext.defer(function () {
             view.unmask();

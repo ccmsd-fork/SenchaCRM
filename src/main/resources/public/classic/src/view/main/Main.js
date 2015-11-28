@@ -70,7 +70,7 @@ Ext.define('SenchaCRM.view.main.Main', {
             layout: 'border',
             flex: 1,
             cls: 'main',
-            reference: 'mainpanel',
+            reference: 'main-panel',
             items: [
                 {
                     title: '顧客リスト',
@@ -81,7 +81,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                     items: [
                         {
                             xtype: 'gridpanel',
-                            store: 'Customers',
+                            store: 'People',
                             plugins: {
                                 ptype: 'cellediting',
                                 clicksToEdit: 1
@@ -101,7 +101,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                                 },
                                 {
                                     xtype: 'pagingtoolbar',
-                                    store: 'Customers',
+                                    store: 'People',
                                     dock: 'bottom',
                                     displayInfo: true
                                 }
@@ -178,7 +178,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                 },
                 {
                     title: 'メニュー',
-                    reference: 'menupanel',
+                    reference: 'menu-panel',
                     region: 'west',
                     width: 200,
                     glyph: 'xf0ca@FontAwesome',

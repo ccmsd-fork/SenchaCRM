@@ -10,7 +10,7 @@ Ext.define('SenchaCRM.Application', {
 
     stores: [
         'Menus',
-        'Customers'
+        'People'
     ],
 
     launch: function () {
@@ -18,7 +18,7 @@ Ext.define('SenchaCRM.Application', {
     },
 
     onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
+        Ext.Msg.confirm('アプリケーションの更新', 'アップデートがあります。再読み込みしますか？',
             function (choice) {
                 if (choice === 'yes') {
                     window.location.reload();

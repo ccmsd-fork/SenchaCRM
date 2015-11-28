@@ -81,13 +81,13 @@ Ext.define('SenchaCRM.store.Menus', {
                         leaf: true
                     },
                     {
-                        text: '商品',
-                        iconCls: "icon-merchandise",
+                        text: '担当者',
+                        iconCls: "icon-users",
                         leaf: true
                     },
                     {
-                        text: 'ユーザー',
-                        iconCls: "icon-users",
+                        text: '商品',
+                        iconCls: "icon-merchandise",
                         leaf: true
                     }
                 ]

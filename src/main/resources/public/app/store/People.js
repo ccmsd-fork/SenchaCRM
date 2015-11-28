@@ -1,11 +1,12 @@
-Ext.define('SenchaCRM.store.Customers', {
+Ext.define('SenchaCRM.store.People', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'SenchaCRM.model.Customer'
+        'SenchaCRM.model.Person',
+        'Ext.data.proxy.Rest'
     ],
 
-    model: 'SenchaCRM.model.Customer',
+    model: 'SenchaCRM.model.Person',
 
     autoLoad: {
         page: 1,
@@ -16,7 +17,7 @@ Ext.define('SenchaCRM.store.Customers', {
 
     proxy: {
         type: 'rest',
-        url: '/customers',
+        url: '/people',
         limitParam: 'size',
         reader: {
             type: 'json',
@@ -30,6 +31,11 @@ Ext.define('SenchaCRM.store.Customers', {
     },
 
     listeners: {
+        /**
+         * @param store
+         * @param operation
+         * @returns {boolean}
+         */
         'beforeload': function (store, operation) {
             var current = operation.getPage();
             operation.setPage(current - 1);

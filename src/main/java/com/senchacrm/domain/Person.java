@@ -14,14 +14,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "customers")
-public class Customer {
+@Table(name = "people")
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastName;
-    private Integer age;
+    private String title;
+    private String company;
     private String phone;
-    private String gender;
+    private String email;
+    private String im;
+    private String websites;
+    private String info;
 }

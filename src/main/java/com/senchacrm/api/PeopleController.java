@@ -17,46 +17,46 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.senchacrm.domain.Customer;
-import com.senchacrm.service.CustomerService;
+import com.senchacrm.domain.Person;
+import com.senchacrm.service.PeopleService;
 
 @RestController
-@RequestMapping("/customers")
-public class CustomerController {
+@RequestMapping("/people")
+public class PeopleController {
     @Autowired
-    CustomerService customerService;
+    PeopleService peopleService;
 
     @RequestMapping(method = RequestMethod.GET)
-    Page<Customer> getCustomers(@PageableDefault Pageable pageable) {
-        Page<Customer> customers = customerService.findAll(pageable);
-        return customers;
+    Page<Person> getPeople(@PageableDefault Pageable pageable) {
+        Page<Person> people = peopleService.findAll(pageable);
+        return people;
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    Customer getCustomer(@PathVariable Integer id) {
-        Customer customer = customerService.findOne(id);
-        return customer;
+    Person getPeople(@PathVariable Integer id) {
+        Person person = peopleService.findOne(id);
+        return person;
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    ResponseEntity<Customer> postCustomers(@RequestBody Customer customer, UriComponentsBuilder uriBuilder) {
-        Customer created = customerService.create(customer);
-        URI location = uriBuilder.path("customers/{id}").buildAndExpand(created.getId()).toUri();
+    ResponseEntity<Person> postPeople(@RequestBody Person person, UriComponentsBuilder uriBuilder) {
+        Person created = peopleService.create(person);
+        URI location = uriBuilder.path("people/{id}").buildAndExpand(created.getId()).toUri();
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(location);
         return new ResponseEntity<>(created, headers, HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
-    Customer putCustomer(@PathVariable Integer id, @RequestBody Customer customer) {
-        customer.setId(id);
-        return customerService.update(customer);
+    Person putPerson(@PathVariable Integer id, @RequestBody Person person) {
+        person.setId(id);
+        return peopleService.update(person);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteCustomer(@PathVariable Integer id) {
-        customerService.delete(id);
+    void deletePerson(@PathVariable Integer id) {
+        peopleService.delete(id);
     }
 
 }
