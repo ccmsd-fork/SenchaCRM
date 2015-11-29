@@ -17,3 +17,5 @@ src/main/resources/public/bootstrap.js
 src/main/resources/public/classic.json
 src/main/resources/public/modern.json
 src/main/resources/public/sass/example/bootstrap.json
+src/main/resources/public/sass/example/bootstrap.js
+src/main/resources/public/sass/example/bootstrap.css
