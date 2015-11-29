@@ -196,7 +196,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                                 {
                                     text: '保存',
                                     glyph: 'xf0c7@FontAwesome',
-                                    handler: 'onSaveButtonClick',
+                                    handler: 'onSaveGridButtonClick',
                                     width: 100
                                 }
                             ]

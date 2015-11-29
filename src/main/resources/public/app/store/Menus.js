@@ -22,7 +22,6 @@ Ext.define('SenchaCRM.store.Menus', {
             {
                 text: 'コンタクト履歴',
                 iconCls: "icon-contact",
-                expanded: true,
                 children: [
                     {
                         text: '一覧',
@@ -39,7 +38,6 @@ Ext.define('SenchaCRM.store.Menus', {
             {
                 text: '案件',
                 iconCls: "icon-case",
-                expanded: true,
                 children: [
                     {
                         text: '一覧',
@@ -56,7 +54,6 @@ Ext.define('SenchaCRM.store.Menus', {
             {
                 text: '取引',
                 iconCls: "icon-deal",
-                expanded: true,
                 children: [
                     {
                         text: '一覧',
@@ -73,7 +70,6 @@ Ext.define('SenchaCRM.store.Menus', {
             {
                 text: 'マスタメンテナンス',
                 iconCls: "icon-master",
-                expanded: true,
                 children: [
                     {
                         text: '会社',
