@@ -1,10 +1,10 @@
-Ext.define('SenchaCRM.view.main.AddForm', {
+Ext.define('SenchaCRM.view.people.Detail', {
     extend: 'Ext.window.Window',
 
-    xtype: 'app-main-add-form',
-    reference: 'app-main-add-form',
+    xtype: 'people-detail',
+    reference: 'people-detail',
 
-    title: '担当者登録',
+    title: '担当者',
     glyph: 'xf007@FontAwesome',
     height: 400,
     width: 500,

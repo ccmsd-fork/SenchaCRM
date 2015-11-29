@@ -1,0 +1,104 @@
+/**
+ * SenchaCRM.view.main.Main
+ */
+Ext.define('SenchaCRM.view.main.Main', {
+    extend: 'Ext.Viewport',
+    xtype: 'app-main',
+
+    requires: [
+        'Ext.plugin.Viewport',
+        'Ext.container.Container',
+        'Ext.form.Label',
+        'Ext.form.field.Text',
+        'Ext.layout.container.Absolute',
+        'Ext.layout.container.Border',
+        'Ext.layout.container.Fit',
+        'Ext.layout.container.VBox',
+        'SenchaCRM.view.people.List'
+    ],
+
+    controller: 'main',
+    viewModel: 'main',
+
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'stretch'
+    },
+
+    items: [
+        {
+            xtype: 'container',
+            height: 44,
+            layout: 'absolute',
+            cls: 'header',
+            items: [
+                {
+                    xtype: 'label',
+                    html: 'SENCHA CRM',
+                    cls: 'app-title',
+                    x: 20,
+                    y: 13
+                },
+                {
+                    xtype: 'textfield',
+                    style: 'right:20',
+                    width: 400,
+                    style: 'top:6px;right:10px;',
+                    emptyText: 'Jump to a contact, case, deal, tag, or search...',
+                    triggers: {
+                        search: {
+                            cls: 'x-form-search-trigger',
+                            handler: 'onSearchTriggerClick'
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            layout: 'border',
+            flex: 1,
+            cls: 'main',
+            reference: 'main-panel',
+            items: [
+                {
+                    xtype: 'people-list'
+
+                },
+                {
+                    title: 'メニュー',
+                    reference: 'menu-panel',
+                    region: 'west',
+                    width: 200,
+                    glyph: 'xf0ca@FontAwesome',
+                    split: true,
+                    collapsed: true,
+                    floatable: false,
+                    layout: 'fit',
+                    items: [
+                        {
+                            xtype: 'treepanel',
+                            rootVisible: false,
+                            store: 'Menus',
+                            listeners: {
+                                itemclick: 'onMenuItemClick'
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            xtype: 'container',
+            cls: 'footer',
+            height: 33,
+            items: [
+                {
+                    xtype: 'label',
+                    html: '<div align="center" style="margin-top:.6em;">© 2015 SenchaCRM</div>'
+                }
+            ]
+        }
+    ]
+});
+

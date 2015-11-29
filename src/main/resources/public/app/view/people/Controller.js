@@ -1,14 +1,14 @@
 /**
  * SenchaCRM.view.main.MainController
  */
-Ext.define('SenchaCRM.view.main.MainController', {
+Ext.define('SenchaCRM.view.people.Controller', {
     extend: 'Ext.app.ViewController',
 
-    alias: 'controller.main',
+    alias: 'controller.people',
 
     requires: [
         'SenchaCRM.model.Person',
-        'SenchaCRM.view.main.AddForm'
+        'SenchaCRM.view.people.Detail'
     ],
 
     /**
@@ -20,13 +20,13 @@ Ext.define('SenchaCRM.view.main.MainController', {
             person: created
         });
 
-        var panel = Ext.widget('app-main-add-form');
+        var panel = Ext.widget('people-detail');
         panel.show(button);
     },
 
     onSaveFormButtonClick: function () {
         var me = this,
-            window = me.lookup('app-main-add-form'),
+            window = me.lookup('people-detail'),
             record = me.getViewModel().getData().person;
 
         var store = Ext.getStore('People');
@@ -63,36 +63,6 @@ Ext.define('SenchaCRM.view.main.MainController', {
      */
     onDeleteButtonClick: function (grid, index) {
         grid.getStore().removeAt(index);
-    },
-
-    /**
-     *
-     */
-    onSearchTriggerClick: function () {
-        Ext.Msg.alert('Hi');
-    },
-
-    /**
-     * @param {Ext.view.View} component
-     * @param {Ext.data.Model} record
-     * @param {HTMLElement} item
-     * @param {Number} index
-     * @param {Ext.event.Event} e
-     */
-    onMenuItemClick: function (component, record, item, index, e) {
-        if (!record.isLeaf()) {
-            return;
-        }
-
-        var panel = this.lookup('menu-panel');
-        panel.setCollapsed(true);
-
-        var view = this.lookup('main-panel');
-        view.mask('画面読込中...');
-        Ext.defer(function () {
-            view.unmask();
-        }, 500);
-
     }
 
 });

@@ -1,6 +1,6 @@
-Ext.define('SenchaCRM.view.main.AddForm', {
+Ext.define('SenchaCRM.view.people.Detail', {
     extend: 'Ext.Panel',
-    xtype: 'app-main-add-form',
+    xtype: 'people-detail',
 
     title: 'HELLO',
     height: 200,
