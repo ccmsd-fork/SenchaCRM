@@ -32,11 +32,16 @@ Ext.define('SenchaCRM.view.people.Controller', {
             window = Ext.first('people-detail'),
             record = me.getViewModel().getData().person;
 
-        window.mask('処理中...');
-
         var store = Ext.getStore('People');
         store.add(record);
 
+        if (store.getModifiedRecords().length === 0 &&
+            store.getRemovedRecords().length === 0) {
+            Ext.Msg.alert('SenchaCRM', '変更がありません。');
+            return;
+        }
+
+        window.mask('処理中...');
         store.sync({
             success: function () {
                 Ext.Msg.alert('SenchaCRM', '保存しました', function () {
@@ -55,6 +60,12 @@ Ext.define('SenchaCRM.view.people.Controller', {
 
         Ext.Msg.confirm('SenchaCRM', '保存しますか？', function (btn) {
             if (btn === 'yes') {
+                if (store.getModifiedRecords().length === 0 &&
+                    store.getRemovedRecords().length === 0) {
+                    Ext.Msg.alert('SenchaCRM', '変更がありません。');
+                    return;
+                }
+
                 view.mask('処理中...');
                 store.sync({
                     success: function () {
