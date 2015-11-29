@@ -6,7 +6,6 @@ Ext.define('SenchaCRM.view.main.Main', {
     xtype: 'app-main',
 
     requires: [
-        'Ext.plugin.Viewport',
         'Ext.container.Container',
         'Ext.form.Label',
         'Ext.form.field.Text',
@@ -14,9 +13,11 @@ Ext.define('SenchaCRM.view.main.Main', {
         'Ext.layout.container.Border',
         'Ext.layout.container.Fit',
         'Ext.layout.container.VBox',
-        'SenchaCRM.view.people.List',
+        'Ext.plugin.Viewport',
+        'Ext.tree.Panel',
+        'SenchaCRM.view.main.Controller',
         'SenchaCRM.view.main.Model',
-        'SenchaCRM.view.main.Controller'
+        'SenchaCRM.view.people.List'
     ],
 
     controller: 'main',

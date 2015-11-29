@@ -3,10 +3,15 @@ Ext.define('SenchaCRM.view.people.Detail', {
     xtype: 'people-detail',
 
     requires: [
-        'Ext.tab.Panel',
-        'Ext.form.Panel',
         'Ext.form.FieldSet',
-        'Ext.form.field.Text'
+        'Ext.form.Panel',
+        'Ext.form.field.Text',
+        'Ext.form.field.TextArea',
+        'Ext.layout.container.Fit',
+        'Ext.layout.container.Form',
+        'Ext.tab.Panel',
+        'SenchaCRM.view.people.Controller',
+        'SenchaCRM.view.people.Model'
     ],
 
     controller: 'people',

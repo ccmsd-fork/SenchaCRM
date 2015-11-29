@@ -7,8 +7,7 @@ Ext.define('SenchaCRM.view.people.Controller', {
     alias: 'controller.people',
 
     requires: [
-        'SenchaCRM.model.Person',
-        'SenchaCRM.view.people.Detail'
+        'SenchaCRM.model.Person'
     ],
 
     /**

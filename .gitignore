@@ -11,6 +11,7 @@ target
 # Sencha
 src/main/resources/public/ext
 src/main/resources/public/build/development
+src/main/resources/public/build/testing
 src/main/resources/public/build/temp
 src/main/resources/public/bootstrap.css
 src/main/resources/public/bootstrap.js
