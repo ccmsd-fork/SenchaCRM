@@ -55,6 +55,12 @@ Run the Spring Boot application.
 
 Then, you can access SenchaCRM application via localhost:8080.
 
+### DEVELOPMENT
+
+Import project to your Eclipse workspace.   
+
+[File] -> [Import] -> [Existing Maven Project], and select the cloned repository.
+
 **Don't forget to add `lombok.jar` to Java build path on your Eclipse project.**
 
 # AUTHOR
