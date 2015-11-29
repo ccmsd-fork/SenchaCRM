@@ -28,4 +28,3 @@ INSERT INTO people (first_name, last_name, title, company, phone, email, im, web
 INSERT INTO people (first_name, last_name, title, company, phone, email, im, websites, info) VALUES ('一美', '佐藤', '', '神奈川ソリューション', '046-123-5678', 'hanako.sato@kana-sol.com', '', 'http://kana-sol.com', '');
 INSERT INTO people (first_name, last_name, title, company, phone, email, im, websites, info) VALUES ('花子', '鈴木', 'マネージャー', '西日本電子', '06-1234-5678', 'ksuzuki@west-el.co.jp', 'skype/ksuzuki', 'http://west-el.co.jp', '神奈川ソリューションズ様のご紹介');
 INSERT INTO people (first_name, last_name, title, company, phone, email, im, websites, info) VALUES ('次郎', '高橋', '', '埼玉システムサービス', '047-123-5678', 'takahashi.jiro@tamasys.co.jp', '', 'http://tamasys.co.jp', '');
-
