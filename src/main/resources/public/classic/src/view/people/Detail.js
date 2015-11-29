@@ -2,6 +2,10 @@ Ext.define('SenchaCRM.view.people.Detail', {
     extend: 'Ext.window.Window',
     xtype: 'people-detail',
 
+    requires: [
+        'Ext.tab.Panel'
+    ],
+
     controller: 'people',
     viewModel: 'people',
 
