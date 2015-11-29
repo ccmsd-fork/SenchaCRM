@@ -42,6 +42,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                 },
                 {
                     xtype: 'textfield',
+                    reference: 'search',
                     style: 'right:20',
                     width: 400,
                     style: 'top:6px;right:10px;',
@@ -51,6 +52,9 @@ Ext.define('SenchaCRM.view.main.Main', {
                             cls: 'x-form-search-trigger',
                             handler: 'onSearchTriggerClick'
                         }
+                    },
+                    listeners: {
+                        specialkey: 'onSearchFieldEnter'
                     }
                 }
             ]
@@ -62,8 +66,8 @@ Ext.define('SenchaCRM.view.main.Main', {
             reference: 'main-panel',
             items: [
                 {
-                    xtype: 'people-list'
-
+                    xtype: 'people-list',
+                    flex: 1
                 },
                 {
                     title: 'メニュー',

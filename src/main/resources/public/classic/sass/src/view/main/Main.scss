@@ -16,15 +16,30 @@
   border-top: 1px solid #d0d0d0;
 }
 
+.cell-icon {
+  margin-left: 4px;
+}
+
 .cell-editing-delete-row:before {
+  @extend .cell-icon;
   font: 16px/1 FontAwesome;
-  color: #dd6550;
+  //color: #dd6550;
+  color: #FF5722;
   content: "\f056";
+}
+
+.cell-detail-row:before {
+  @extend .cell-icon;
+  font: 16px/1 FontAwesome;
+  //color: #4078c0;
+  color: #616161;
+  content: "\f05a";
 }
 
 .framing-buttons-add:before {
   font: 16px/1 FontAwesome;
-  color: #81cb31;
+  //color: #81cb31;
+  color: #4CAF50;
   content: "\f055";
 }
 

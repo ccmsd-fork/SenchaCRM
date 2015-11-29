@@ -15,19 +15,24 @@ Ext.define('SenchaCRM.view.people.Controller', {
      * @param button
      */
     onAddButtonClick: function (button) {
+        var panel = Ext.widget('people-detail');
+
         var created = Ext.create('SenchaCRM.model.Person');
-        this.getViewModel().setData({
+        panel.getViewModel().setData({
             person: created
         });
 
-        var panel = Ext.widget('people-detail');
         panel.show(button);
     },
 
+    /**
+     */
     onSaveFormButtonClick: function () {
         var me = this,
-            window = me.lookup('people-detail'),
+            window = Ext.first('people-detail'),
             record = me.getViewModel().getData().person;
+
+        window.mask('処理中...');
 
         var store = Ext.getStore('People');
         store.add(record);
@@ -42,12 +47,18 @@ Ext.define('SenchaCRM.view.people.Controller', {
         });
     },
 
+    /**
+     */
     onSaveGridButtonClick: function () {
-        var store = Ext.getStore('People');
+        var view = this.getView(),
+            store = Ext.getStore('People');
+
         Ext.Msg.confirm('SenchaCRM', '保存しますか？', function (btn) {
             if (btn === 'yes') {
+                view.mask('処理中...');
                 store.sync({
                     success: function () {
+                        view.unmask();
                         Ext.Msg.alert('SenchaCRM', '保存しました', function () {
                             store.load();
                         });
@@ -63,6 +74,21 @@ Ext.define('SenchaCRM.view.people.Controller', {
      */
     onDeleteButtonClick: function (grid, index) {
         grid.getStore().removeAt(index);
+    },
+
+    /**
+     * @param grid
+     * @param index
+     */
+    onDetailButtonClick: function (grid, index, num, option, e) {
+        var panel = Ext.widget('people-detail');
+
+        var person = grid.getStore().getAt(index);
+        panel.getViewModel().setData({
+            person: person
+        });
+
+        panel.show(e.event.srcElement);
     }
 
 });

@@ -25,7 +25,6 @@ Ext.define('SenchaCRM.view.people.List', {
     title: '担当者一覧',
     region: 'center',
     layout: 'fit',
-    flex: 3,
     glyph: 'xf007@FontAwesome',
 
     items: [
@@ -58,10 +57,15 @@ Ext.define('SenchaCRM.view.people.List', {
             ],
             columns: [
                 {
-                    text: 'ID',
-                    dataIndex: 'id',
-                    width: 50
-
+                    xtype: 'actioncolumn',
+                    width: 30,
+                    menuDisabled: true,
+                    items: [
+                        {
+                            iconCls: 'cell-detail-row',
+                            handler: 'onDetailButtonClick'
+                        }
+                    ]
                 },
                 {
                     text: '名前（性）',
@@ -76,20 +80,14 @@ Ext.define('SenchaCRM.view.people.List', {
                     editor: 'textfield'
                 },
                 {
-                    text: '肩書き',
-                    dataIndex: 'title',
-                    width: 150,
-                    editor: 'textfield'
-                },
-                {
                     text: '会社',
                     dataIndex: 'company',
                     flex: 1,
                     editor: 'textfield'
                 },
                 {
-                    text: '電話番号',
-                    dataIndex: 'phone',
+                    text: '肩書き',
+                    dataIndex: 'title',
                     width: 150,
                     editor: 'textfield'
                 },
@@ -97,6 +95,12 @@ Ext.define('SenchaCRM.view.people.List', {
                     text: 'Eメール',
                     dataIndex: 'email',
                     flex: 1,
+                    editor: 'textfield'
+                },
+                {
+                    text: '電話番号',
+                    dataIndex: 'phone',
+                    width: 150,
                     editor: 'textfield'
                 },
                 {

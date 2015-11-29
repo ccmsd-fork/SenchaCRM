@@ -1,8 +1,9 @@
 Ext.define('SenchaCRM.view.people.Detail', {
     extend: 'Ext.window.Window',
-
     xtype: 'people-detail',
-    reference: 'people-detail',
+
+    controller: 'people',
+    viewModel: 'people',
 
     title: '担当者',
     glyph: 'xf007@FontAwesome',
@@ -48,28 +49,25 @@ Ext.define('SenchaCRM.view.people.Detail', {
                             items: [
                                 {
                                     xtype: 'textfield',
-                                    name: 'lastName',
                                     fieldLabel: '名前（姓）<b style="color:red"> * </b>',
                                     allowBlank: false,
-                                    bind: {
-                                        value: '{person.firstName}'
-                                    }
+                                    bind: '{person.lastName}'
                                 },
                                 {
                                     xtype: 'textfield',
-                                    name: 'firstName',
                                     fieldLabel: '名前（名）<b style="color:red"> * </b>',
-                                    allowBlank: false
+                                    allowBlank: false,
+                                    bind: '{person.firstName}'
                                 },
                                 {
                                     xtype: 'textfield',
-                                    name: 'company',
-                                    fieldLabel: '会社'
+                                    fieldLabel: '会社',
+                                    bind: '{person.company}'
                                 },
                                 {
                                     xtype: 'textfield',
-                                    name: 'title',
-                                    fieldLabel: '肩書き'
+                                    fieldLabel: '肩書き',
+                                    bind: '{person.title}'
                                 }
                             ]
                         }
@@ -88,28 +86,28 @@ Ext.define('SenchaCRM.view.people.Detail', {
                             items: [
                                 {
                                     xtype: 'textfield',
-                                    name: 'phone',
-                                    fieldLabel: '電話番号'
+                                    fieldLabel: '電話番号',
+                                    bind: '{person.phone}'
                                 },
                                 {
                                     xtype: 'textfield',
-                                    name: 'Eメール',
-                                    fieldLabel: 'email'
+                                    fieldLabel: 'Eメール',
+                                    bind: '{person.email}'
                                 },
                                 {
                                     xtype: 'textfield',
-                                    name: 'im',
-                                    fieldLabel: 'IM'
+                                    fieldLabel: 'IM',
+                                    bind: '{person.im}'
                                 },
                                 {
                                     xtype: 'textfield',
-                                    name: 'websites',
-                                    fieldLabel: 'Webサイト'
+                                    fieldLabel: 'Webサイト',
+                                    bind: '{person.websites}'
                                 },
                                 {
                                     xtype: 'textareafield',
-                                    name: 'info',
-                                    fieldLabel: '特記事項'
+                                    fieldLabel: '特記事項',
+                                    bind: '{person.info}'
                                 }
                             ]
                         }

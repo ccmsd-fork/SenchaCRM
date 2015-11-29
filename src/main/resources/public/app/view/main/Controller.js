@@ -31,7 +31,20 @@ Ext.define('SenchaCRM.view.main.Controller', {
      *
      */
     onSearchTriggerClick: function () {
-        Ext.Msg.alert('Hi');
+        var search = this.lookup('search');
+        Ext.Msg.alert('SenchaCRM', search.getValue());
+    },
+
+    /**
+     * @param {Ext.form.field.Base} component
+     * @param {Ext.event.Event} e
+     */
+    onSearchFieldEnter: function (component, e) {
+        var search = this.lookup('search');
+
+        if (e.getKey() == e.ENTER) {
+            Ext.Msg.alert('SenchaCRM', search.getValue());
+        }
     }
 
 });

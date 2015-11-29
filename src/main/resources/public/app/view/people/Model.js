@@ -4,5 +4,9 @@
 Ext.define('SenchaCRM.view.people.Model', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.people',
-    data: {}
+    data: {
+        person: {
+            firstName: 'asdfafdsj'
+        }
+    }
 });
