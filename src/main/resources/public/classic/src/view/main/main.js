@@ -14,7 +14,9 @@ Ext.define('SenchaCRM.view.main.Main', {
         'Ext.layout.container.Border',
         'Ext.layout.container.Fit',
         'Ext.layout.container.VBox',
-        'SenchaCRM.view.people.List'
+        'SenchaCRM.view.people.List',
+        'SenchaCRM.view.main.Model',
+        'SenchaCRM.view.main.Controller'
     ],
 
     controller: 'main',
