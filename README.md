@@ -9,7 +9,7 @@
 
 CRM application powered by latest [Sencha](https://www.sencha.com/) web technologies.
 
-![SenchaCRM](http://www.triplam.com/resources/images/mini.png)
+<img src="http://senchacrm.com/images/senchacrm.png" alt="SenchaCRM" width="150"/>
 
 DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
 
@@ -47,6 +47,15 @@ Install Sencha Ext JS SDK.
 Build the Sencha application.
 
     $ sencha app build development
+
+Create database named "senchacrm" on your PostgreSQL DB, and update `src/main/resources/application. yml` to fit your environment.
+
+    datasource:
+      ...
+      url: jdbc:postgresql://localhost:5432/senchacrm
+      username: kawanoshinobu
+      password: 
+      ...
 
 Run the Spring Boot application.
 
