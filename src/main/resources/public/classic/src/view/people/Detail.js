@@ -16,6 +16,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
 
     controller: 'people',
     viewModel: 'people',
+    modelValidation: true,
 
     title: '担当者',
     glyph: 'xf007@FontAwesome',
@@ -61,14 +62,16 @@ Ext.define('SenchaCRM.view.people.Detail', {
                             items: [
                                 {
                                     xtype: 'textfield',
+                                    reference: 'firstname',
                                     fieldLabel: '名前（姓）<b style="color:red"> * </b>',
-                                    allowBlank: false,
+                                    msgTarget: 'side',
                                     bind: '{person.lastName}'
                                 },
                                 {
                                     xtype: 'textfield',
+                                    reference: 'lastname',
                                     fieldLabel: '名前（名）<b style="color:red"> * </b>',
-                                    allowBlank: false,
+                                    msgTarget: 'side',
                                     bind: '{person.firstName}'
                                 },
                                 {

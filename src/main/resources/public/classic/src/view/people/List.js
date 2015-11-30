@@ -23,6 +23,7 @@ Ext.define('SenchaCRM.view.people.List', {
 
     controller: 'people',
     viewModel: 'people',
+    modelValidation: true,
 
     title: '担当者一覧',
     region: 'center',

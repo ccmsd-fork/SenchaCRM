@@ -1,6 +1,10 @@
 Ext.define('SenchaCRM.model.Person', {
     extend: 'Ext.data.Model',
 
+    requires: [
+        'Ext.data.validator.Presence'
+    ],
+
     fields: [
         {name: 'firstName', type: 'string'},
         {name: 'lastName', type: 'string'},
@@ -11,6 +15,11 @@ Ext.define('SenchaCRM.model.Person', {
         {name: 'im', type: 'string'},
         {name: 'websites', type: 'string'},
         {name: 'info', type: 'string'}
-    ]
+    ],
+
+    validators: {
+        firstName: 'presence',
+        lastName: 'presence'
+    }
 
 });
