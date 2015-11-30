@@ -31,11 +31,14 @@ Ext.define('SenchaCRM.view.people.Controller', {
             window = Ext.first('people-detail'),
             record = me.getViewModel().getData().person;
 
-        var valid = true;
-        Ext.each([me.lookup('firstname'), me.lookup('lastname')], function (f) {
-            valid = f.validate();
+        var fields = [
+            me.lookup('firstname'),
+            me.lookup('lastname')
+        ];
+        var results = Ext.Array.map(fields, function (f) {
+            return f.validate();
         });
-        if (!valid) {
+        if (Ext.Array.contains(results, false)) {
             Ext.Msg.alert('SenchaCRM', '入力値が不正です。');
             return;
         }

@@ -44,6 +44,13 @@ Ext.define('SenchaCRM.view.main.Main', {
                     y: 13
                 },
                 {
+                    xtype: 'image',
+                    src: 'resources/images/senchacrm.png',
+                    width: 26,
+                    x: 185,
+                    y: 10
+                },
+                {
                     xtype: 'textfield',
                     reference: 'search',
                     style: 'right:20',
