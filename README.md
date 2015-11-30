@@ -13,6 +13,8 @@ CRM application powered by latest [Sencha](https://www.sencha.com/) web technolo
 
 DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
 
+<img src="http://senchacrm.com/images/hero.png" alt="SenchaCRM" width="500"/>
+
 # REQUIREMENTS
 
 ### RUN
@@ -48,7 +50,7 @@ Build the Sencha application.
 
     $ sencha app build development
 
-Create database named "senchacrm" on your PostgreSQL DB, and update `src/main/resources/application. yml` to fit your environment.
+Create database named "senchacrm" on your PostgreSQL DB, and update `src/main/resources/application.yml` to fit your environment.
 
     datasource:
       ...
