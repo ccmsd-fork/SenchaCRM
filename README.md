@@ -9,7 +9,7 @@
 
 CRM application powered by latest [Sencha](https://www.sencha.com/) web technologies.
 
-<img src="http://senchacrm.com/images/senchacrm.png" alt="SenchaCRM" width="150"/>
+<img src="http://senchacrm.com/images/logo.png" alt="SenchaCRM" width="150"/>
 
 DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
 

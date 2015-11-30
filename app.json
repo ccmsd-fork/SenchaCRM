@@ -2,6 +2,6 @@
   "name": "SenchaCRM",
   "description": "CRM application powered by latest Sencha web technologies.",
   "repository": "https://github.com/kawanoshinobu/SenchaCRM",
-  "logo": "http://www.triplam.com/resources/images/mini.png",
+  "logo": "http://senchacrm.com/images/logo.png",
   "keywords": ["sencha", "html5", "spring"]
 }
