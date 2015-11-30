@@ -111,6 +111,77 @@ Ext.define('SenchaCRM.view.people.Controller', {
         });
 
         panel.show(e.event.srcElement);
+    },
+
+    /**
+     * @param {Ext.dataview.DataView} component
+     * @param {Number} index
+     * @param {Ext.Element/Ext.dataview.component.DataItem} target
+     * @param {Ext.data.Model} record
+     * @param {Ext.event.Event} e
+     */
+    onListItemTap: function (component, index, target, record, e) {
+        var me = this,
+            page = me.lookup('user');
+
+        me.getViewModel().setData({
+            person: record
+        });
+
+        page.animateActiveItem(1, {
+            type: 'slide',
+            direction: 'left'
+        });
+    },
+
+    /**
+     * @param {Ext.Button} component
+     * @param {Ext.EventObject} e
+     */
+    onTapBackButton: function (component, e) {
+        this.doBack();
+    },
+
+    doBack: function () {
+        var page = this.lookup('user');
+
+        page.animateActiveItem(0, {
+            type: 'slide',
+            direction: 'right'
+        });
+
+        Ext.defer(function () {
+            page.down('people-detail').getScrollable().scrollTo(0, 0);
+        }, 500);
+    },
+
+    /**
+     * @param {Ext.Button} component
+     * @param {Ext.EventObject} e
+     */
+    onTapSaveButton: function (component, e) {
+        var me = this,
+            view = me.getView();
+
+        var store = Ext.getStore('People');
+
+        if (store.getModifiedRecords().length === 0 &&
+            store.getRemovedRecords().length === 0) {
+            Ext.Msg.alert('SenchaCRM', '変更がありません。');
+            return;
+        }
+
+        view.setMasked({
+            xtype: 'loadmask',
+            message: '処理中..'
+        });
+
+        store.sync({
+            success: function () {
+                view.unmask();
+                me.doBack();
+            }
+        });
     }
 
 });

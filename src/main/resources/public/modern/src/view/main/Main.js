@@ -8,7 +8,6 @@ Ext.define('SenchaCRM.view.main.Main', {
     xtype: 'app-main',
 
     requires: [
-        'Ext.MessageBox',
         'SenchaCRM.view.main.Controller',
         'SenchaCRM.view.main.Model',
         'SenchaCRM.view.people.List'
