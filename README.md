@@ -39,7 +39,7 @@ DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
 
 Clone the repository.
 
-    $ git clone https://github.com/kawanoshinobu/SenchaCRM
+    $ git clone https://github.com/shinobukawano/SenchaCRM
 
 Install Sencha Ext JS SDK.
 
@@ -55,7 +55,7 @@ Create database named "senchacrm" on your PostgreSQL DB, and update `src/main/re
     datasource:
       ...
       url: jdbc:postgresql://localhost:5432/senchacrm
-      username: kawanoshinobu
+      username: shinobukawano
       password: 
       ...
 
@@ -76,7 +76,7 @@ Import project to your Eclipse workspace.
 
 # AUTHOR
 
-* [Shinobu Kawano](https://github.com/kawanoshinobu) - [http://kawanoshinobu.com](http://kawanoshinobu.com)
+* [Shinobu Kawano](https://github.com/shinobukawano) - [http://shinobukawano.com](http://kawanoshinobu.com)
 
 # LICENSE
 
