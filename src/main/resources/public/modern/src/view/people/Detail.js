@@ -32,6 +32,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
                     iconCls: 'x-fa fa-floppy-o',
                     align: 'right',
                     ui: 'action',
+                    reference: 'saveButton',
                     listeners: {
                         tap: 'onTapSaveButton'
                     }
@@ -62,7 +63,13 @@ Ext.define('SenchaCRM.view.people.Detail', {
                     label: '肩書き',
                     bind: '{person.title}'
                 }
-            ]
+            ],
+            listeners: {
+                change: {
+                    fn: 'onUpdateField',
+                    delegate: 'textfield'
+                }
+            }
         },
         {
             xtype: 'fieldset',

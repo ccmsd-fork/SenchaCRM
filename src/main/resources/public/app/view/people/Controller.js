@@ -124,6 +124,9 @@ Ext.define('SenchaCRM.view.people.Controller', {
         var me = this,
             page = me.lookup('user');
 
+        var button = me.lookup('saveButton');
+        button.setDisabled(true);
+
         me.getViewModel().setData({
             person: record
         });
@@ -143,11 +146,17 @@ Ext.define('SenchaCRM.view.people.Controller', {
     },
 
     doBack: function () {
-        var page = this.lookup('user');
+        var me = this,
+            page = me.lookup('user');
 
         page.animateActiveItem(0, {
             type: 'slide',
             direction: 'right'
+        });
+
+        var fields = page.query('formpanel textfield');
+        Ext.each(fields, function (field) {
+            field.ready = false;
         });
 
         Ext.defer(function () {
@@ -182,6 +191,21 @@ Ext.define('SenchaCRM.view.people.Controller', {
                 me.doBack();
             }
         });
+    },
+
+    /**
+     * @param field
+     * @param newValue
+     * @param oldValue
+     */
+    onUpdateField: function (field, newValue, oldValue) {
+        var me = this;
+        if (!Boolean(field.ready)) {
+            field.ready = true;
+            return;
+        }
+        var button = this.lookup('saveButton');
+        button.setDisabled(false);
     }
 
 });
