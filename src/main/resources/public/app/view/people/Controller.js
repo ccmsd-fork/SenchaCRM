@@ -124,9 +124,6 @@ Ext.define('SenchaCRM.view.people.Controller', {
         var me = this,
             page = me.lookup('user');
 
-        var button = me.lookup('saveButton');
-        button.setDisabled(true);
-
         me.getViewModel().setData({
             person: record
         });
@@ -147,7 +144,10 @@ Ext.define('SenchaCRM.view.people.Controller', {
 
     doBack: function () {
         var me = this,
+            vm = me.getViewModel(),
             page = me.lookup('user');
+
+        vm.getData().person.reject();
 
         page.animateActiveItem(0, {
             type: 'slide',
@@ -199,13 +199,11 @@ Ext.define('SenchaCRM.view.people.Controller', {
      * @param oldValue
      */
     onUpdateField: function (field, newValue, oldValue) {
-        var me = this;
-        if (!Boolean(field.ready)) {
-            field.ready = true;
-            return;
-        }
-        var button = this.lookup('saveButton');
-        button.setDisabled(false);
+        var me = this,
+            vm = this.getViewModel(),
+            record = vm.getData().person;
+
+        vm.set('saveButtonDisabled', !record.dirty);
     }
 
 });

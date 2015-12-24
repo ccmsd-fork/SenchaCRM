@@ -4,6 +4,7 @@
 .project
 .idea
 .DS_Store
+sencha-crm.iml
 
 # Java
 target

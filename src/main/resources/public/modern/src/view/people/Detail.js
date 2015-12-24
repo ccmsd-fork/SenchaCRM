@@ -28,11 +28,12 @@ Ext.define('SenchaCRM.view.people.Detail', {
                 },
                 {
                     xtype: 'button',
-                    //text: '保存',
                     iconCls: 'x-fa fa-floppy-o',
                     align: 'right',
                     ui: 'action',
-                    reference: 'saveButton',
+                    bind: {
+                        disabled: '{saveButtonDisabled}'
+                    },
                     listeners: {
                         tap: 'onTapSaveButton'
                     }
@@ -41,7 +42,6 @@ Ext.define('SenchaCRM.view.people.Detail', {
         },
         {
             xtype: 'fieldset',
-            //title: '基本',
             items: [
                 {
                     xtype: 'textfield',
@@ -63,17 +63,10 @@ Ext.define('SenchaCRM.view.people.Detail', {
                     label: '肩書き',
                     bind: '{person.title}'
                 }
-            ],
-            listeners: {
-                change: {
-                    fn: 'onUpdateField',
-                    delegate: 'textfield'
-                }
-            }
+            ]
         },
         {
             xtype: 'fieldset',
-            //title: '基本',
             items: [
                 {
                     xtype: 'textfield',
@@ -102,5 +95,11 @@ Ext.define('SenchaCRM.view.people.Detail', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        change: {
+            fn: 'onUpdateField',
+            delegate: 'textfield'
+        }
+    }
 });
