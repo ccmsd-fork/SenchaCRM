@@ -7,11 +7,11 @@
 
 # OVERVIEW
 
-CRM application powered by latest [Sencha](https://www.sencha.com/) web technologies.
+The CRM application powered by latest [Sencha](https://www.sencha.com/) web technologies.
 
 <img src="http://senchacrm.com/images/logo.png" alt="SenchaCRM" width="150"/>
 
-DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
+The DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
 
 <img src="http://senchacrm.com/images/hero.png" alt="SenchaCRM" width="500"/>
 
@@ -33,7 +33,8 @@ DEMO SITE is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
 ### OPTIONAL
 
 1. [WebStorm 11+](https://www.jetbrains.com/webstorm/download/)
-2. [Heroku Toolbelt](https://toolbelt.heroku.com/)
+2. [IntelliJ IDEA 15+](https://www.jetbrains.com/idea/download/)
+3. [Heroku Toolbelt](https://toolbelt.heroku.com/)
 
 # GETTING STARTED
 
@@ -41,7 +42,7 @@ Clone the repository.
 
     $ git clone https://github.com/shinobukawano/SenchaCRM
 
-Install Sencha Ext JS SDK.
+Setup `Sencha Ext JS SDK` (v6 is required).
 
     $ cd SenchaCRM/src/main/resources/public
     $ sencha app upgrade {path/to/Ext-JS-SDK}
@@ -64,7 +65,7 @@ Run the Spring Boot application.
     $ cd SenchaCRM
     $ mvn spring-boot:run
 
-Then, you can access SenchaCRM application via localhost:8080.
+Then, you can access th `Sencha CRM` application via localhost:8080.
 
 ### DEVELOPMENT
 
@@ -76,7 +77,7 @@ Import project to your Eclipse workspace.
 
 # AUTHOR
 
-* [Shinobu Kawano](https://github.com/shinobukawano) - [http://shinobukawano.com](http://kawanoshinobu.com)
+* [Shinobu Kawano](https://github.com/shinobukawano) - [http://shinobukawano.com](http://shinobukawano.com)
 
 # LICENSE
 
