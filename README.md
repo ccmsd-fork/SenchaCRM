@@ -42,7 +42,7 @@ Clone the repository.
 
     $ git clone https://github.com/shinobukawano/SenchaCRM
 
-Setup `Sencha Ext JS SDK` (v6 is required).
+Setup `Sencha Ext JS` SDK (v6 is required).
 
     $ cd SenchaCRM/src/main/resources/public
     $ sencha app upgrade {path/to/Ext-JS-SDK}
