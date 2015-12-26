@@ -16,7 +16,8 @@ Ext.define('SenchaCRM.view.people.List', {
         'Ext.toolbar.Paging',
         'Ext.toolbar.Toolbar',
         'SenchaCRM.view.people.Controller',
-        'SenchaCRM.view.people.Model'
+        'SenchaCRM.view.people.Model',
+        'SenchaCRM.view.people.Detail'
     ],
 
     xtype: 'people-list',

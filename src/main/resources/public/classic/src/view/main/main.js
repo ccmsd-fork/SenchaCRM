@@ -46,6 +46,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                 {
                     xtype: 'image',
                     src: 'resources/images/senchacrm.png',
+                    alt: 'senchacrm-logo',
                     width: 26,
                     x: 185,
                     y: 10

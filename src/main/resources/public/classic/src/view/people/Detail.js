@@ -38,7 +38,10 @@ Ext.define('SenchaCRM.view.people.Detail', {
                     text: '保存',
                     glyph: 'xf0c7@FontAwesome',
                     handler: 'onSaveFormButtonClick',
-                    width: 100
+                    width: 100,
+                    bind: {
+                        disabled: '{saveButtonDisabled}'
+                    }
                 }
             ]
         }
@@ -130,5 +133,14 @@ Ext.define('SenchaCRM.view.people.Detail', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        change: {
+            fn: 'onUpdateField',
+            delegate: 'textfield'
+        },
+        close: {
+            fn: 'onCloseWindow'
+        }
+    }
 });

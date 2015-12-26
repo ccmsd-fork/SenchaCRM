@@ -65,6 +65,14 @@ Ext.define('SenchaCRM.view.people.Controller', {
 
     /**
      */
+    onCloseWindow: function () {
+        var me = this,
+            vm = me.getViewModel();
+        vm.getData().person.reject();
+    },
+
+    /**
+     */
     onSaveGridButtonClick: function () {
         var view = this.getView(),
             store = Ext.getStore('People');
@@ -199,8 +207,7 @@ Ext.define('SenchaCRM.view.people.Controller', {
      * @param oldValue
      */
     onUpdateField: function (field, newValue, oldValue) {
-        var me = this,
-            vm = this.getViewModel(),
+        var vm = this.getViewModel(),
             record = vm.getData().person;
 
         vm.set('saveButtonDisabled', !record.dirty);
