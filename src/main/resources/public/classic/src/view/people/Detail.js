@@ -36,6 +36,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
             items: [
                 {
                     text: '保存',
+                    reference: 'saveButton',
                     glyph: 'xf0c7@FontAwesome',
                     handler: 'onSaveFormButtonClick',
                     width: 100,

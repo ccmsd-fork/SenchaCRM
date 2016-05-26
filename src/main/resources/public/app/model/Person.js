@@ -20,6 +20,10 @@ Ext.define('SenchaCRM.model.Person', {
     validators: {
         firstName: 'presence',
         lastName: 'presence'
+    },
+    
+    canSave: function () {
+        return this.isValid();
     }
 
 });
