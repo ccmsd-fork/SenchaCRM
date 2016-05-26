@@ -152,7 +152,7 @@ Ext.define('SenchaCRM.view.people.List', {
             },
             items: [
                 {
-                    text: '保存',
+                    text: '一括保存',
                     glyph: 'xf0c7@FontAwesome',
                     handler: 'onSaveGridButtonClick',
                     width: 100
