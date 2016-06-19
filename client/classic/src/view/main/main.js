@@ -13,8 +13,7 @@ Ext.define('SenchaCRM.view.main.Main', {
         'Ext.layout.container.Border',
         'Ext.layout.container.Fit',
         'Ext.layout.container.VBox',
-        'Ext.plugin.Viewport',
-        'Ext.tree.Panel',
+        'Ext.list.Tree',
         'SenchaCRM.view.main.Controller',
         'SenchaCRM.view.main.Model',
         'SenchaCRM.view.people.List'
@@ -92,8 +91,10 @@ Ext.define('SenchaCRM.view.main.Main', {
                     layout: 'fit',
                     items: [
                         {
-                            xtype: 'treepanel',
-                            rootVisible: false,
+                            xtype: 'treelist',
+                            //rootVisible: false,
+                            ui: 'nav',
+                            cls: 'treelist-with-nav',
                             store: 'Menus',
                             listeners: {
                                 itemclick: 'onMenuItemClick'
@@ -110,7 +111,7 @@ Ext.define('SenchaCRM.view.main.Main', {
             items: [
                 {
                     xtype: 'label',
-                    html: '<div align="center" style="margin-top:.6em;">© 2015 SenchaCRM</div>'
+                    html: '<div align="center" style="margin-top:.6em;">© 2016 SenchaCRM</div>'
                 }
             ]
         }

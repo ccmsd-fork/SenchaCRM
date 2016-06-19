@@ -43,62 +43,119 @@
   content: "\f055";
 }
 
-.icon-dashboard:before {
-  font: 16px/1 FontAwesome;
-  content: "\f0e4";
+@include treelist-ui(
+        $ui: 'nav',
+
+          // Extra padding left/right
+        $padding: 0 10px,
+
+          // Black-ish background color
+        //$background-color: #32404e,
+        $background-color: rgb(249, 247, 245),
+        $toolstrip-background-color: rgb(249, 247, 245),
+
+        $tool-selected-color: #FF5722,
+        $tool-selected-background-color: #FF5722,
+
+        $tool-float-indicator-width: 4px,
+        $tool-float-indicator-color: #FF5722,
+
+          // Darker background for expanded subtrees
+        $item-expanded-background-color: rgb(249, 247, 245),
+
+          // Taller line height
+        $item-line-height : 36px,
+
+          // Off-white text
+        $item-icon-color: #616161,
+        $item-expander-color: #616161,
+        $item-text-color: #616161,
+
+          // Brighter when hovered
+        $row-over-background-color: #efedeb,
+        $item-icon-over-color: #616161,
+        $item-expander-over-color: #616161,
+        $item-text-over-color: #616161,
+
+        $row-indicator-width: 6px,
+        $row-indicator-selected-color: #FF5722,
+        $row-indicator-selected-over-color: lighten(#FF5722, 10%),
+        $row-indicator-over-color: lighten(#FF5722, 10%),
+
+          // Various sizes for the pieces:
+        $item-icon-font-size: 18px,
+        $item-icon-width: 24px,
+        $item-expander-font-size: 16px,
+        $item-expander-width: 24px,
+
+        $row-selected-background-color: #e9e7e5
+);
+
+.treelist-with-nav .#{$prefix}panel-body {
+  background-color: #e9e7e5;
+  text-shadow: 0px 1px 1px #fff;
 }
 
-.icon-activity:before {
-  font: 16px/1 FontAwesome;
-  content: "\f1ae";
+.x-treelist-expander-first .x-treelist-item-text {
+  margin-left: 42px !important;
 }
 
-.icon-list:before {
-  font: 16px/1 FontAwesome;
-  content: "\f022";
-}
-
-.icon-chart:before {
-  font: 16px/1 FontAwesome;
-  content: "\f080";
-}
-
-.icon-contact:before {
-  font: 16px/1 FontAwesome;
-  content: "\f095";
-}
-
-.icon-case:before {
-  font: 16px/1 FontAwesome;
-  content: "\f0f2";
-}
-
-.icon-deal:before {
-  font: 16px/1 FontAwesome;
-  content: "\f0d6";
-}
-
-.icon-trash:before {
-  font: 16px/1 FontAwesome;
-  content: "\f1f8";
-}
-
-.icon-users:before {
-  font: 16px/1 FontAwesome;
-  content: "\f007";
-}
-
-.icon-company:before {
-  font: 16px/1 FontAwesome;
-  content: "\f1ad";
-}
-
-.icon-merchandise:before {
-  font: 16px/1 FontAwesome;
-  content: "\f109";
-}
-
-.icon-master:before {
-  font: 16px/1 FontAwesome;
-  content: "\f085";
-}
+//.icon-dashboard:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f0e4";
+//}
+//
+//.icon-activity:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f1ae";
+//}
+//
+//.icon-list:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f022";
+//}
+//
+//.icon-chart:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f080";
+//}
+//
+//.icon-contact:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f095";
+//}
+//
+//.icon-case:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f0f2";
+//}
+//
+//.icon-deal:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f0d6";
+//}
+//
+//.icon-trash:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f1f8";
+//}
+//
+//.icon-users:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f007";
+//}
+//
+//.icon-company:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f1ad";
+//}
+//
+//.icon-merchandise:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f109";
+//}
+//
+//.icon-master:before {
+//  font: 16px/1 FontAwesome;
+//  content: "\f085";
+//}

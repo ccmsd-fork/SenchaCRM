@@ -10,27 +10,27 @@ Ext.define('SenchaCRM.store.Menus', {
         children: [
             {
                 text: 'ダッシュボード',
-                iconCls: "icon-dashboard",
+                iconCls: "x-fa fa-home",
                 leaf: true
             },
             {
 
                 text: '最近の活動',
-                iconCls: "icon-activity",
+                iconCls: "x-fa fa-home",
                 leaf: true
             },
             {
                 text: 'コンタクト履歴',
-                iconCls: "icon-contact",
+                iconCls: "x-fa fa-home",
                 children: [
                     {
                         text: '一覧',
-                        iconCls: "icon-list",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     },
                     {
                         text: '集計処理',
-                        iconCls: "icon-chart",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     }
                 ]
@@ -41,56 +41,56 @@ Ext.define('SenchaCRM.store.Menus', {
                 children: [
                     {
                         text: '一覧',
-                        iconCls: "icon-list",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     },
                     {
                         text: '集計処理',
-                        iconCls: "icon-chart",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     }
                 ]
             },
             {
                 text: '取引',
-                iconCls: "icon-deal",
+                iconCls: "x-fa fa-home",
                 children: [
                     {
                         text: '一覧',
-                        iconCls: "icon-list",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     },
                     {
                         text: '集計処理',
-                        iconCls: "icon-chart",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     }
                 ]
             },
             {
                 text: 'マスタメンテナンス',
-                iconCls: "icon-master",
+                iconCls: "x-fa fa-home",
                 children: [
                     {
                         text: '会社',
-                        iconCls: "icon-company",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     },
                     {
                         text: '担当者',
-                        iconCls: "icon-users",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     },
                     {
                         text: '商品',
-                        iconCls: "icon-merchandise",
+                        iconCls: "x-fa fa-home",
                         leaf: true
                     }
                 ]
             },
             {
                 text: 'ごみ箱',
-                iconCls: "icon-trash",
+                iconCls: "x-fa fa-home",
                 leaf: true
             }
         ]
