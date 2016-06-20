@@ -28,4 +28,6 @@ public class Person {
     private String im;
     private String websites;
     private String info;
+    private String photo;
+    private String age;
 }

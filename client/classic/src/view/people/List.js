@@ -25,7 +25,7 @@ Ext.define('SenchaCRM.view.people.List', {
     viewModel: 'people',
     modelValidation: true,
 
-    title: '担当者一覧',
+    title: 'コンタクト履歴',
     region: 'center',
     layout: 'fit',
     glyph: 'xf022@FontAwesome',
@@ -111,39 +111,47 @@ Ext.define('SenchaCRM.view.people.List', {
                     width: 150,
                     editor: 'textfield'
                 },
-                //{
-                //    text: 'Eメール',
-                //    dataIndex: 'email',
-                //    flex: 1,
-                //    editor: 'textfield'
-                //},
-                //{
-                //    text: '電話番号',
-                //    dataIndex: 'phone',
-                //    width: 150,
-                //    editor: 'textfield'
-                //},
-                //{
-                //    text: 'IM',
-                //    dataIndex: 'im',
-                //    flex: 1,
-                //    editor: 'textfield',
-                //    hidden: true
-                //},
-                //{
-                //    text: 'Webサイト',
-                //    dataIndex: 'websites',
-                //    flex: 1,
-                //    editor: 'textfield',
-                //    hidden: true
-                //},
-                //{
-                //    text: '特記事項',
-                //    dataIndex: 'info',
-                //    flex: 1,
-                //    editor: 'textfield',
-                //    hidden: true
-                //},
+                {
+                    text: '年齢',
+                    dataIndex: 'age',
+                    width: 70,
+                    editor: 'textfield'
+                },
+                {
+                    text: 'Eメール',
+                    dataIndex: 'email',
+                    flex: 1,
+                    hidden: true,
+                    editor: 'textfield'
+                },
+                {
+                    text: '電話番号',
+                    dataIndex: 'phone',
+                    width: 150,
+                    hidden: true,
+                    editor: 'textfield'
+                },
+                {
+                    text: 'IM',
+                    dataIndex: 'im',
+                    flex: 1,
+                    editor: 'textfield',
+                    hidden: true
+                },
+                {
+                    text: 'Webサイト',
+                    dataIndex: 'websites',
+                    flex: 1,
+                    editor: 'textfield',
+                    hidden: true
+                },
+                {
+                    text: '特記事項',
+                    dataIndex: 'info',
+                    flex: 1,
+                    editor: 'textfield',
+                    hidden: true
+                },
                 {
                     xtype: 'actioncolumn',
                     width: 30,

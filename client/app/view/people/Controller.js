@@ -104,6 +104,7 @@ Ext.define('SenchaCRM.view.people.Controller', {
      */
     onDeleteButtonClick: function (grid, index) {
         grid.getStore().removeAt(index);
+        this.onUpdateRecord();
     },
 
     /**
@@ -216,7 +217,8 @@ Ext.define('SenchaCRM.view.people.Controller', {
     onUpdateRecord: function () {
         var vm = this.getViewModel(),
             store = Ext.getStore('People');
-        vm.set('storeEditing', store.getModifiedRecords().length === 0);
+        var targets = Ext.Array.merge(store.getModifiedRecords(), store.getRemovedRecords());
+        vm.set('storeEditing', targets.length === 0);
     }
 
 });

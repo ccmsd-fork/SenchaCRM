@@ -51,6 +51,11 @@ Ext.define('SenchaCRM.view.main.Controller', {
         var panel = this.lookup('menu-panel');
         var treeList = panel.down('treelist');
         treeList.setMicro(panel.getWidth() < 50);
+    },
+
+    onAfterRenderMenu: function (menu) {
+        debugger;
+
     }
 
 });

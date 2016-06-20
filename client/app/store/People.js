@@ -10,10 +10,10 @@ Ext.define('SenchaCRM.store.People', {
 
     autoLoad: {
         page: 1,
-        limit: 10
+        limit: 20
     },
 
-    pageSize: 10,
+    pageSize: 20,
 
     proxy: {
         type: 'rest',

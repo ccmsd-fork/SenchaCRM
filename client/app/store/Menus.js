@@ -16,6 +16,7 @@ Ext.define('SenchaCRM.store.Menus', {
             {
                 text: 'コンタクト履歴',
                 iconCls: "x-fa fa-user",
+                expanded: true,
                 children: [
                     {
                         text: '一覧',

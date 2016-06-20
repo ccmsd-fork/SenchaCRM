@@ -116,7 +116,8 @@ Ext.define('SenchaCRM.view.main.Main', {
                                     fn: 'onResizeTreeList',
                                     element: 'element',
                                     scope: 'controller'
-                                }
+                                },
+                                afterrender: 'onAfterRenderMenu'
                             }
                         }
                     ]

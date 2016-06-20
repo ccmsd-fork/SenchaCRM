@@ -3,7 +3,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
 
     xtype: 'people-detail',
 
-    title: '担当者',
+    title: '詳細',
 
     glyph: 'xf007@FontAwesome',
 
