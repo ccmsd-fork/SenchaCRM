@@ -103,6 +103,9 @@ Ext.define('SenchaCRM.view.main.Main', {
                     //collapsed: true,
                     floatable: false,
                     layout: 'fit',
+                    listeners: {
+                        afterrender: 'onAfterRenderMenu'
+                    },
                     items: [
                         {
                             xtype: 'treelist',
@@ -112,12 +115,12 @@ Ext.define('SenchaCRM.view.main.Main', {
                             store: 'Menus',
                             listeners: {
                                 itemclick: 'onMenuItemClick',
+                                afterrender: 'onAfterRenderMenu',
                                 resize: {
                                     fn: 'onResizeTreeList',
                                     element: 'element',
                                     scope: 'controller'
-                                },
-                                afterrender: 'onAfterRenderMenu'
+                                }
                             }
                         }
                     ]

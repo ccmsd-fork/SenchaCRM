@@ -25,7 +25,7 @@ Ext.define('SenchaCRM.view.people.List', {
     viewModel: 'people',
     modelValidation: true,
 
-    title: 'コンタクト履歴',
+    title: 'コンタクト履歴 一覧',
     region: 'center',
     layout: 'fit',
     glyph: 'xf022@FontAwesome',

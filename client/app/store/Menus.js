@@ -19,6 +19,7 @@ Ext.define('SenchaCRM.store.Menus', {
                 expanded: true,
                 children: [
                     {
+                        id: 'contact-list',
                         text: '一覧',
                         iconCls: "x-fa fa-list-alt",
                         leaf: true
