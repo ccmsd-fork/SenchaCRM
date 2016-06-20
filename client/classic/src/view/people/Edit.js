@@ -1,6 +1,6 @@
-Ext.define('SenchaCRM.view.people.Detail', {
+Ext.define('SenchaCRM.view.people.Edit', {
     extend: 'Ext.window.Window',
-    xtype: 'people-detail',
+    xtype: 'people-edit',
 
     requires: [
         'Ext.form.FieldSet',

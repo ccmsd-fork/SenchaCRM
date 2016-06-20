@@ -14,7 +14,7 @@ Ext.define('SenchaCRM.view.people.Controller', {
      * @param button
      */
     onAddButtonClick: function (button) {
-        var panel = Ext.widget('people-detail');
+        var panel = Ext.widget('people-edit');
 
         var created = Ext.create('SenchaCRM.model.Person');
         panel.getViewModel().setData({
@@ -28,7 +28,7 @@ Ext.define('SenchaCRM.view.people.Controller', {
      */
     onSaveFormButtonClick: function () {
         var me = this,
-            window = Ext.first('people-detail'),
+            window = Ext.first('people-edit'),
             record = me.getViewModel().getData().person;
 
         var fields = [
@@ -111,7 +111,7 @@ Ext.define('SenchaCRM.view.people.Controller', {
      * @param index
      */
     onDetailButtonClick: function (grid, index, num, option, e) {
-        var panel = Ext.widget('people-detail');
+        var panel = Ext.widget('people-edit');
 
         var person = grid.getStore().getAt(index);
         panel.getViewModel().setData({

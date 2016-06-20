@@ -93,39 +93,39 @@ Ext.define('SenchaCRM.view.people.List', {
                     width: 150,
                     editor: 'textfield'
                 },
-                {
-                    text: 'Eメール',
-                    dataIndex: 'email',
-                    flex: 1,
-                    editor: 'textfield'
-                },
-                {
-                    text: '電話番号',
-                    dataIndex: 'phone',
-                    width: 150,
-                    editor: 'textfield'
-                },
-                {
-                    text: 'IM',
-                    dataIndex: 'im',
-                    flex: 1,
-                    editor: 'textfield',
-                    hidden: true
-                },
-                {
-                    text: 'Webサイト',
-                    dataIndex: 'websites',
-                    flex: 1,
-                    editor: 'textfield',
-                    hidden: true
-                },
-                {
-                    text: '特記事項',
-                    dataIndex: 'info',
-                    flex: 1,
-                    editor: 'textfield',
-                    hidden: true
-                },
+                //{
+                //    text: 'Eメール',
+                //    dataIndex: 'email',
+                //    flex: 1,
+                //    editor: 'textfield'
+                //},
+                //{
+                //    text: '電話番号',
+                //    dataIndex: 'phone',
+                //    width: 150,
+                //    editor: 'textfield'
+                //},
+                //{
+                //    text: 'IM',
+                //    dataIndex: 'im',
+                //    flex: 1,
+                //    editor: 'textfield',
+                //    hidden: true
+                //},
+                //{
+                //    text: 'Webサイト',
+                //    dataIndex: 'websites',
+                //    flex: 1,
+                //    editor: 'textfield',
+                //    hidden: true
+                //},
+                //{
+                //    text: '特記事項',
+                //    dataIndex: 'info',
+                //    flex: 1,
+                //    editor: 'textfield',
+                //    hidden: true
+                //},
                 {
                     xtype: 'actioncolumn',
                     width: 30,

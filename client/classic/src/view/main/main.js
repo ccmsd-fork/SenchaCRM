@@ -60,9 +60,10 @@ Ext.define('SenchaCRM.view.main.Main', {
                     xtype: 'textfield',
                     reference: 'search',
                     style: 'right:20',
-                    width: 400,
+                    width: 450,
                     style: 'top:6px;right:10px;',
-                    emptyText: 'Jump to a contact, case, deal, tag, or search...',
+                    //emptyText: 'Jump to a contact, case, deal, tag, or search...',
+                    emptyText: 'コンタクト履歴、案件、取引などデータ全体を検索します ...',
                     triggers: {
                         search: {
                             cls: 'x-form-search-trigger',
