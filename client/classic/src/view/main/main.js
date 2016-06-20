@@ -14,6 +14,7 @@ Ext.define('SenchaCRM.view.main.Main', {
         'Ext.layout.container.Fit',
         'Ext.layout.container.VBox',
         'Ext.list.Tree',
+        'Ext.plugin.Responsive',
         'SenchaCRM.view.main.Controller',
         'SenchaCRM.view.main.Model',
         'SenchaCRM.view.people.List'
@@ -29,6 +30,11 @@ Ext.define('SenchaCRM.view.main.Main', {
     },
 
     items: [
+        {
+            xtype: 'box',
+            height: 3,
+            style: 'background-color: #fc9a7c;'
+        },
         {
             xtype: 'container',
             height: 44,
@@ -77,16 +83,25 @@ Ext.define('SenchaCRM.view.main.Main', {
             items: [
                 {
                     xtype: 'people-list',
-                    flex: 1
+                    flex: 1,
                 },
                 {
                     title: 'メニュー',
                     reference: 'menu-panel',
                     region: 'west',
-                    width: 200,
+                    plugins: 'responsive',
+                    responsiveConfig: {
+                        'width < 800': {
+                            width: 44
+                        },
+                        'width >= 1000': {
+                            width: 220
+                        }
+                    },
+                    //width: 220,
                     glyph: 'xf0ca@FontAwesome',
                     split: true,
-                    collapsed: true,
+                    //collapsed: true,
                     floatable: false,
                     layout: 'fit',
                     items: [
@@ -97,7 +112,12 @@ Ext.define('SenchaCRM.view.main.Main', {
                             cls: 'treelist-with-nav',
                             store: 'Menus',
                             listeners: {
-                                itemclick: 'onMenuItemClick'
+                                itemclick: 'onMenuItemClick',
+                                resize: {
+                                    fn: 'onResizeTreeList',
+                                    element: 'element',
+                                    scope: 'controller'
+                                }
                             }
                         }
                     ]

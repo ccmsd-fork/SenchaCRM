@@ -45,6 +45,12 @@ Ext.define('SenchaCRM.view.main.Controller', {
         if (e.getKey() == e.ENTER) {
             Ext.Msg.alert('SenchaCRM', search.getValue());
         }
+    },
+
+    onResizeTreeList: function () {
+        var panel = this.lookup('menu-panel');
+        var treeList = panel.down('treelist');
+        treeList.setMicro(panel.getWidth() < 50);
     }
 
 });

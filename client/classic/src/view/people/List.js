@@ -14,10 +14,8 @@ Ext.define('SenchaCRM.view.people.List', {
         'Ext.grid.plugin.CellEditing',
         'Ext.layout.container.Fit',
         'Ext.toolbar.Paging',
-        'Ext.toolbar.Toolbar',
         'SenchaCRM.view.people.Controller',
-        'SenchaCRM.view.people.Model',
-        'SenchaCRM.view.people.Detail'
+        'SenchaCRM.view.people.Model'
     ],
 
     xtype: 'people-list',

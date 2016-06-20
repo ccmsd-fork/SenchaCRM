@@ -9,6 +9,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
         'Ext.form.field.TextArea',
         'Ext.layout.container.Fit',
         'Ext.layout.container.Form',
+        'Ext.plugin.Responsive',
         'Ext.tab.Panel',
         'SenchaCRM.view.people.Controller',
         'SenchaCRM.view.people.Model'
@@ -20,8 +21,17 @@ Ext.define('SenchaCRM.view.people.Detail', {
 
     title: '担当者',
     glyph: 'xf007@FontAwesome',
-    height: 400,
-    width: 500,
+    height: '80%',
+    plugins: 'responsive',
+    responsiveConfig: {
+        'width < 800': {
+            width: '80%'
+        },
+        'width >= 1000': {
+            width: '50%'
+        }
+    },
+    //width: 800,
     layout: 'fit',
     modal: true,
 
