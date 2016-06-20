@@ -110,7 +110,7 @@ Ext.define('SenchaCRM.view.people.Controller', {
      * @param grid
      * @param index
      */
-    onDetailButtonClick: function (grid, index, num, option, e) {
+    onEditButtonClick: function (grid, index, num, option, e) {
         var panel = Ext.widget('people-edit');
 
         var person = grid.getStore().getAt(index);
@@ -211,6 +211,12 @@ Ext.define('SenchaCRM.view.people.Controller', {
             record = vm.getData().person;
 
         vm.set('saveButtonDisabled', !record.dirty);
+    },
+
+    onUpdateRecord: function () {
+        var vm = this.getViewModel(),
+            store = Ext.getStore('People');
+        vm.set('storeEditing', store.getModifiedRecords().length === 0);
     }
 
 });

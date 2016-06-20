@@ -5,8 +5,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
     requires: [
         'Ext.field.Text',
         'Ext.field.TextArea',
-        'Ext.form.FieldSet',
-        'Ext.layout.Fit'
+        'Ext.form.FieldSet'
     ],
 
     layout: 'vbox',

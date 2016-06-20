@@ -28,12 +28,12 @@
   content: "\f056";
 }
 
-.cell-detail-row:before {
+.cell-edit-row:before {
   @extend .cell-icon;
   font: 16px/1 FontAwesome;
   //color: #4078c0;
   color: #616161;
-  content: "\f05a";
+  content: "\f044";
 }
 
 .framing-buttons-add:before {

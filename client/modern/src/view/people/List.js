@@ -10,12 +10,8 @@ Ext.define('SenchaCRM.view.people.List', {
     xtype: 'people-list',
 
     requires: [
-        'Ext.MessageBox',
         'Ext.dataview.List',
-        'Ext.field.Search',
         'Ext.field.Text',
-        'Ext.layout.Fit',
-        'Ext.layout.HBox',
         'Ext.plugin.ListPaging',
         'SenchaCRM.view.people.Controller',
         'SenchaCRM.view.people.Detail',

@@ -19,7 +19,7 @@ Ext.define('SenchaCRM.store.Menus', {
                 children: [
                     {
                         text: '一覧',
-                        iconCls: "x-fa fa-list-ul",
+                        iconCls: "x-fa fa-list-alt",
                         leaf: true
                     },
                     {
@@ -35,7 +35,7 @@ Ext.define('SenchaCRM.store.Menus', {
                 children: [
                     {
                         text: '一覧',
-                        iconCls: "x-fa fa-list-ul",
+                        iconCls: "x-fa fa-list-alt",
                         leaf: true
                     },
                     {
@@ -51,7 +51,7 @@ Ext.define('SenchaCRM.store.Menus', {
                 children: [
                     {
                         text: '一覧',
-                        iconCls: "x-fa fa-list-ul",
+                        iconCls: "x-fa fa-list-alt",
                         leaf: true
                     },
                     {

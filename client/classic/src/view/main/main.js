@@ -14,9 +14,11 @@ Ext.define('SenchaCRM.view.main.Main', {
         'Ext.layout.container.Fit',
         'Ext.layout.container.VBox',
         'Ext.list.Tree',
+        'Ext.panel.Panel',
         'Ext.plugin.Responsive',
         'SenchaCRM.view.main.Controller',
         'SenchaCRM.view.main.Model',
+        'SenchaCRM.view.people.Detail',
         'SenchaCRM.view.people.List'
     ],
 
@@ -83,10 +85,6 @@ Ext.define('SenchaCRM.view.main.Main', {
             reference: 'main-panel',
             items: [
                 {
-                    xtype: 'people-list',
-                    flex: 1,
-                },
-                {
                     title: 'メニュー',
                     reference: 'menu-panel',
                     region: 'west',
@@ -100,7 +98,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                         }
                     },
                     //width: 220,
-                    glyph: 'xf0ca@FontAwesome',
+                    glyph: 'xf0c9@FontAwesome',
                     split: true,
                     //collapsed: true,
                     floatable: false,
@@ -118,6 +116,37 @@ Ext.define('SenchaCRM.view.main.Main', {
                                     fn: 'onResizeTreeList',
                                     element: 'element',
                                     scope: 'controller'
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    xtype: 'panel',
+                    layout: 'border',
+                    region: 'center',
+                    flex: 1,
+                    items: [
+                        {
+                            xtype: 'people-list',
+                            region: 'center',
+                            flex: 2
+                        },
+                        {
+                            xtype: 'people-detail',
+                            region: 'east',
+                            split: true,
+                            //collapsed: true,
+                            flex: 1,
+                            plugins: 'responsive',
+                            responsiveConfig: {
+                                'width < 800': {
+                                    region: 'south',
+                                    flex: 2
+                                },
+                                'width >= 1000': {
+                                    region: 'east',
+                                    flex: 1
                                 }
                             }
                         }

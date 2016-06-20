@@ -13,6 +13,7 @@ Ext.define('SenchaCRM.view.people.List', {
         'Ext.grid.column.Action',
         'Ext.grid.plugin.CellEditing',
         'Ext.layout.container.Fit',
+        'Ext.toolbar.Fill',
         'Ext.toolbar.Paging',
         'SenchaCRM.view.people.Controller',
         'SenchaCRM.view.people.Model'
@@ -27,7 +28,7 @@ Ext.define('SenchaCRM.view.people.List', {
     title: '担当者一覧',
     region: 'center',
     layout: 'fit',
-    glyph: 'xf007@FontAwesome',
+    glyph: 'xf022@FontAwesome',
 
     items: [
         {
@@ -35,7 +36,15 @@ Ext.define('SenchaCRM.view.people.List', {
             store: 'People',
             plugins: {
                 ptype: 'cellediting',
-                clicksToEdit: 1
+                clicksToEdit: 1,
+                listeners: {
+                    'edit': 'onUpdateRecord'
+                }
+            },
+            viewConfig: {
+                listeners: {
+                    refresh: 'onUpdateRecord'
+                }
             },
             dockedItems: [
                 {
@@ -47,6 +56,15 @@ Ext.define('SenchaCRM.view.people.List', {
                             handler: 'onAddButtonClick',
                             iconCls: 'framing-buttons-add',
                             width: 100
+                        },
+                        '->',
+                        {
+                            text: '編集内容の保存',
+                            glyph: 'xf0c7@FontAwesome',
+                            handler: 'onSaveGridButtonClick',
+                            bind: {
+                                disabled: '{storeEditing}'
+                            }
                         }
                     ]
                 },
@@ -64,8 +82,8 @@ Ext.define('SenchaCRM.view.people.List', {
                     menuDisabled: true,
                     items: [
                         {
-                            iconCls: 'cell-detail-row',
-                            handler: 'onDetailButtonClick'
+                            iconCls: 'cell-edit-row',
+                            handler: 'onEditButtonClick'
                         }
                     ]
                 },
@@ -139,24 +157,25 @@ Ext.define('SenchaCRM.view.people.List', {
                 }
             ]
         }
-    ],
-    dockedItems: [
-        {
-            xtype: 'toolbar',
-            dock: 'bottom',
-            ui: 'footer',
-            layout: {
-                pack: 'end'
-            },
-            items: [
-                {
-                    text: '一括保存',
-                    glyph: 'xf0c7@FontAwesome',
-                    handler: 'onSaveGridButtonClick',
-                    width: 100
-                }
-            ]
-        }
     ]
+
+    //dockedItems: [
+    //    {
+    //        xtype: 'toolbar',
+    //        dock: 'bottom',
+    //        ui: 'footer',
+    //        layout: {
+    //            pack: 'end'
+    //        },
+    //        items: [
+    //            {
+    //                text: '一括保存',
+    //                glyph: 'xf0c7@FontAwesome',
+    //                handler: 'onSaveGridButtonClick',
+    //                width: 100
+    //            }
+    //        ]
+    //    }
+    //]
 
 });
