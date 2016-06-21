@@ -62,7 +62,8 @@ Ext.define('SenchaCRM.view.people.List', {
                                 {
                                     xtype: 'textfield',
                                     align: 'center',
-                                    placeHolder: 'Jump to a contact, case, deal, tag, or search..'
+                                    placeHolder: '全体を検索します ...'
+                                    //placeHolder: 'Jump to a contact, case, deal, tag, or search..'
                                 },
                                 {
                                     xtype: 'button',
@@ -81,16 +82,48 @@ Ext.define('SenchaCRM.view.people.List', {
             ]
         },
         {
-            iconCls: 'x-fa fa-phone'
+            iconCls: 'x-fa fa-phone',
+            items: [
+                {
+                    xtype: 'titlebar',
+                    title: '連絡先',
+                    cls: 'header'
+                }
+
+            ]
         },
         {
-            iconCls: 'x-fa fa-suitcase'
+            iconCls: 'x-fa fa-suitcase',
+            items: [
+                {
+                    xtype: 'titlebar',
+                    title: '案件',
+                    cls: 'header'
+                }
+
+            ]
         },
         {
-            iconCls: 'x-fa fa-money'
+            iconCls: 'x-fa fa-money',
+            items: [
+                {
+                    xtype: 'titlebar',
+                    title: '取引',
+                    cls: 'header'
+                }
+
+            ]
         },
         {
-            iconCls: 'x-fa fa-list'
+            iconCls: 'x-fa fa-list',
+            items: [
+                {
+                    xtype: 'titlebar',
+                    title: 'その他',
+                    cls: 'header'
+                }
+
+            ]
         }
     ]
 

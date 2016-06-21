@@ -5,7 +5,8 @@ Ext.define('SenchaCRM.view.people.Detail', {
     requires: [
         'Ext.field.Text',
         'Ext.field.TextArea',
-        'Ext.form.FieldSet'
+        'Ext.form.FieldSet',
+        'Ext.tab.Panel'
     ],
 
     layout: 'vbox',
@@ -40,60 +41,151 @@ Ext.define('SenchaCRM.view.people.Detail', {
             ]
         },
         {
-            xtype: 'fieldset',
-            items: [
-                {
-                    xtype: 'textfield',
-                    label: '姓',
-                    bind: '{person.lastName}'
-                },
-                {
-                    xtype: 'textfield',
-                    label: '名',
-                    bind: '{person.firstName}'
-                },
-                {
-                    xtype: 'textfield',
-                    label: '会社',
-                    bind: '{person.company}'
-                },
-                {
-                    xtype: 'textfield',
-                    label: '肩書き',
-                    bind: '{person.title}'
+            xtype: 'tabpanel',
+            flex: 1,
+            tabBar: {
+                layout: {
+                    pack: 'center'
                 }
-            ]
-        },
-        {
-            xtype: 'fieldset',
+            },
             items: [
                 {
-                    xtype: 'textfield',
-                    label: '電話',
-                    bind: '{person.phone}'
+                    title: '基本情報',
+                    items: [
+                        {
+                            xtype: 'component',
+                            style: 'width: 630px; margin: 20px 0;',
+                            bind: {
+                                html: [
+                                    '<img src="resources/images/photos/{person.photo}"',
+                                    ' height="100px"',
+                                    ' style="box-shadow: #c7cdcf 0 1px 0 0;',
+                                    ' border-radius: 3px;',
+                                    ' margin-left: 20px;',
+                                    '"/>'
+                                ].join('')
+                            }
+                        },
+                        {
+                            xtype: 'fieldset',
+                            items: [
+
+                                {
+                                    xtype: 'textfield',
+                                    label: '姓',
+                                    bind: '{person.lastName}'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    label: '名',
+                                    bind: '{person.firstName}'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    label: '会社',
+                                    bind: '{person.company}'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    label: '肩書き',
+                                    bind: '{person.title}'
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    xtype: 'textfield',
-                    label: 'Eメール',
-                    bind: '{person.email}'
-                },
-                {
-                    xtype: 'textfield',
-                    label: 'IM',
-                    bind: '{person.im}'
-                },
-                {
-                    xtype: 'textfield',
-                    label: 'Webサイト',
-                    bind: '{person.websites}'
-                },
-                {
-                    xtype: 'textareafield',
-                    label: '特記事項',
-                    bind: '{person.info}'
+                    title: '詳細',
+                    items: [
+                        {
+                            xtype: 'fieldset',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    label: '電話',
+                                    bind: '{person.phone}'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    label: 'Eメール',
+                                    bind: '{person.email}'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    label: 'IM',
+                                    bind: '{person.im}'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    label: 'Webサイト',
+                                    bind: '{person.websites}'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    label: '特記事項',
+                                    bind: '{person.info}'
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
+        //{
+        //    xtype: 'fieldset',
+        //    items: [
+        //        {
+        //            xtype: 'textfield',
+        //            label: '姓',
+        //            bind: '{person.lastName}'
+        //        },
+        //        {
+        //            xtype: 'textfield',
+        //            label: '名',
+        //            bind: '{person.firstName}'
+        //        },
+        //        {
+        //            xtype: 'textfield',
+        //            label: '会社',
+        //            bind: '{person.company}'
+        //        },
+        //        {
+        //            xtype: 'textfield',
+        //            label: '肩書き',
+        //            bind: '{person.title}'
+        //        }
+        //    ]
+        //},
+        //{
+        //    xtype: 'fieldset',
+        //    items: [
+        //        {
+        //            xtype: 'textfield',
+        //            label: '電話',
+        //            bind: '{person.phone}'
+        //        },
+        //        {
+        //            xtype: 'textfield',
+        //            label: 'Eメール',
+        //            bind: '{person.email}'
+        //        },
+        //        {
+        //            xtype: 'textfield',
+        //            label: 'IM',
+        //            bind: '{person.im}'
+        //        },
+        //        {
+        //            xtype: 'textfield',
+        //            label: 'Webサイト',
+        //            bind: '{person.websites}'
+        //        },
+        //        {
+        //            xtype: 'textareafield',
+        //            label: '特記事項',
+        //            bind: '{person.info}'
+        //        }
+        //    ]
+        //}
     ],
     listeners: {
         change: {

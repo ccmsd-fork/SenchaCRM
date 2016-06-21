@@ -6,7 +6,10 @@ Ext.define('SenchaCRM.view.people.Model', {
     alias: 'viewmodel.people',
     data: {
         saveButtonDisabled: true,
-        storeEditing: true
+        storeEditing: true,
+        person: {
+            firstName: 'hoge'
+        }
     }
     //formulas: {
     //    storeEditing: function () {

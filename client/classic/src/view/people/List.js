@@ -41,6 +41,9 @@ Ext.define('SenchaCRM.view.people.List', {
                     'edit': 'onUpdateRecord'
                 }
             },
+            listeners: {
+                select: 'onSelectRecord'
+            },
             viewConfig: {
                 listeners: {
                     refresh: 'onUpdateRecord'

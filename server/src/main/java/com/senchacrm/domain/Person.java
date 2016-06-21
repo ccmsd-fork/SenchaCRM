@@ -29,5 +29,5 @@ public class Person {
     private String websites;
     private String info;
     private String photo;
-    private String age;
+    private Integer age;
 }
