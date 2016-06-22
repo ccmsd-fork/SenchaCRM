@@ -26,7 +26,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
             margin: 10,
             padding: '0 20',
             cls: 'detail-container',
-            height: '95%',
+            height: '97%',
             items: [
                 {
                     xtype: 'label',
@@ -47,19 +47,6 @@ Ext.define('SenchaCRM.view.people.Detail', {
                             '"/>'
                         ].join('')
                     }
-                    //tpl: [
-                    //    '<tpl for=".">',
-                    //    '<img src="{.}"',
-                    //    ' height="200px"',
-                    //    ' style="box-shadow: #c7cdcf 0 1px 0 0;',
-                    //    ' border-radius: 3px;',
-                    //    ' margin-right: 3px;',
-                    //    '"/>',
-                    //    '</tpl>'
-                    //].join(''),
-                    //bind: {
-                    //    data: '{record.photos}'
-                    //}
                 },
                 {
                     xtype: 'label',
@@ -88,7 +75,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
                 {
                     xtype: 'label',
                     bind: {
-                        html: '<h3 class="caption">特記事項</h3> {person.info}'
+                        html: '<h3 class="caption">特記事項</h3> {person.info}<br><br>'
                     }
                 }
                 //{

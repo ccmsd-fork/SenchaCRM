@@ -45,7 +45,9 @@ Ext.define('SenchaCRM.view.people.List', {
                     plugins: [
                         {
                             xclass: 'Ext.plugin.ListPaging',
-                            autoPaging: true
+                            autoPaging: true,
+                            loadMoreText: 'さらに表示...',
+                            noMoreRecordsText: '全て表示しました'
                         }
                     ],
                     store: 'People',

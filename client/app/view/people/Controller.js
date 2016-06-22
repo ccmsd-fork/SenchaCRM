@@ -16,7 +16,10 @@ Ext.define('SenchaCRM.view.people.Controller', {
     onAddButtonClick: function (button) {
         var panel = Ext.widget('people-edit');
 
-        var created = Ext.create('SenchaCRM.model.Person');
+        var created = Ext.create('SenchaCRM.model.Person', {
+            photo: 'no-image.png'
+        });
+
         panel.getViewModel().setData({
             person: created
         });

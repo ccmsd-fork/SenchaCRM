@@ -5,6 +5,7 @@ Ext.define('SenchaCRM.view.people.Edit', {
     requires: [
         'Ext.form.FieldSet',
         'Ext.form.Panel',
+        'Ext.form.field.HtmlEditor',
         'Ext.form.field.Text',
         'Ext.form.field.TextArea',
         'Ext.layout.container.Fit',
@@ -60,18 +61,36 @@ Ext.define('SenchaCRM.view.people.Edit', {
     items: [
         {
             xtype: 'tabpanel',
-            tabPosition: 'left',
+            tabPosition: 'bottom',
             items: [
                 {
                     xtype: 'form',
                     title: '基本',
                     layout: 'form',
+                    padding: '0 10',
                     scrollable: true,
                     items: [
                         {
+                            xtype: 'component',
+                            style: 'width: 630px; margin: 10px 0;',
+                            bind: {
+                                html: [
+                                    '<img src="resources/images/photos/{person.photo}"',
+                                    ' height="100px"',
+                                    ' style="box-shadow: #c7cdcf 0 1px 0 0;',
+                                    ' border-radius: 3px;',
+                                    ' margin-left: 6px;',
+                                    '"/>'
+                                ].join('')
+                            }
+                        },
+                        {
                             xtype: 'fieldset',
                             padding: '0',
-                            layout: 'form',
+                            //layout: 'form',
+                            defaults: {
+                                width: '100%'
+                            },
                             items: [
                                 {
                                     xtype: 'textfield',
@@ -98,19 +117,14 @@ Ext.define('SenchaCRM.view.people.Edit', {
                                     bind: '{person.title}'
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    xtype: 'form',
-                    title: 'その他',
-                    layout: 'form',
-                    scrollable: true,
-                    items: [
+                        },
                         {
                             xtype: 'fieldset',
                             padding: '0',
-                            layout: 'form',
+                            //layout: 'form',
+                            defaults: {
+                                width: '100%'
+                            },
                             items: [
                                 {
                                     xtype: 'textfield',
@@ -138,6 +152,18 @@ Ext.define('SenchaCRM.view.people.Edit', {
                                     bind: '{person.info}'
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'form',
+                    title: '最近の活動',
+                    layout: 'fit',
+                    scrollable: true,
+                    items: [
+                        {
+                            xtype: 'htmleditor',
+                            margin: 10
                         }
                     ]
                 }

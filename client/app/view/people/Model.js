@@ -8,7 +8,11 @@ Ext.define('SenchaCRM.view.people.Model', {
         saveButtonDisabled: true,
         storeEditing: true,
         person: {
-            firstName: 'hoge'
+            company: ' ',
+            title: ' ',
+            tel: ' ',
+            email: ' ',
+            info: ' '
         }
     }
     //formulas: {

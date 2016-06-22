@@ -36,13 +36,13 @@ INSERT INTO people(first_name, last_name, title, company, phone, email, im, webs
 INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('和也', '佐沼', '担当部長', '東京システム', '03-1234-5681', '', '', '', '代理店からの紹介', 'no-image.png', 49);
 INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('太郎', '山田', '部長', '東京商事', '03-1234-5678', 'yamada@tokyo-biz.co.jp', 'skype/taro_yamada', 'http://tokyo-biz.co.jp', '代理店からの紹介', '1.png', 33);
 INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('守', '柏野', '', '東京ソフトウェア', '03-1234-5685', '', '', '', '代理店からの紹介', '8.png', 23);
-INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('結衣', '木本', '', '東京トラベル', '03-1234-5688', '', '', '', '代理店からの紹介', '9.png', 28);
-INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('真央', '戸田', '', '東京印刷', '03-1234-5683', '', '', '', '代理店からの紹介', '6.png', 22);
-INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('祐志', '飯田', '係長', '東京デザイン', '03-1234-5684', '', '', '', '代理店からの紹介', '7.png', 45);
-INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('涼平', '本田', '', '東京サポート', '03-1234-5686', '', '', '', '代理店からの紹介', '10.png', 25);
+INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('和子', '木本', '', '東京トラベル', '03-1234-5688', '', '', '', '代理店からの紹介', '9.png', 28);
+INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('夏子', '戸田', '', '東京印刷', '03-1234-5683', '', '', '', '代理店からの紹介', '7.png', 22);
+INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('祐志', '飯田', '係長', '東京デザイン', '03-1234-5684', '', '', '', '代理店からの紹介', '6.png', 45);
+INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('結衣', '本田', '', '東京サポート', '03-1234-5686', '', '', '', '代理店からの紹介', '10.png', 25);
 INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('栄一朗', '荒木', 'シニアコンサルタント', '東京システム', '03-1234-5681', '', '', '', '', '4.png', 26);
 INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('誠', '平田', '', '東京エンジニアリング', '03-1234-5682', '', '', '', '', '5.png', 24);
-INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('和美', '井上', '', '東京ソリューション', '03-1234-5679', '', '', '', '', '2.png', 22);
+INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('里香', '井上', '', '東京ソリューション', '03-1234-5679', '', '', '', '', '2.png', 22);
 INSERT INTO people(first_name, last_name, title, company, phone, email, im, websites, info, photo, age) VALUES('孝彦', '木下', '課長', '東京コンサルティング', '03-1234-5680', '', '', '', '代理店からの紹介', '3.png', 44);
 
 
