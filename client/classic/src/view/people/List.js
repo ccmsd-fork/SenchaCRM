@@ -115,9 +115,9 @@ Ext.define('SenchaCRM.view.people.List', {
                     editor: 'textfield'
                 },
                 {
-                    text: '年齢',
-                    dataIndex: 'age',
-                    width: 70,
+                    text: '訪問回数',
+                    dataIndex: 'visited',
+                    width: 100,
                     editor: 'textfield'
                 },
                 {

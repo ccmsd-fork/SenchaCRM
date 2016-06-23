@@ -25,6 +25,7 @@ Ext.define('SenchaCRM.store.Menus', {
                         leaf: true
                     },
                     {
+                        id: 'contact-summary',
                         text: '集計処理',
                         iconCls: "x-fa fa-pie-chart",
                         leaf: true

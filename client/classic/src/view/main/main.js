@@ -11,6 +11,7 @@ Ext.define('SenchaCRM.view.main.Main', {
         'Ext.form.field.Text',
         'Ext.layout.container.Absolute',
         'Ext.layout.container.Border',
+        'Ext.layout.container.Card',
         'Ext.layout.container.Fit',
         'Ext.layout.container.VBox',
         'Ext.list.Tree',
@@ -127,32 +128,39 @@ Ext.define('SenchaCRM.view.main.Main', {
                 },
                 {
                     xtype: 'panel',
-                    layout: 'border',
                     region: 'center',
+                    reference: 'application-panel',
+                    layout: 'card',
                     flex: 1,
                     items: [
                         {
-                            xtype: 'people-list',
-                            region: 'center',
-                            flex: 2
-                        },
-                        {
-                            xtype: 'people-detail',
-                            region: 'east',
-                            split: true,
-                            //collapsed: true,
-                            flex: 1,
-                            plugins: 'responsive',
-                            responsiveConfig: {
-                                'width < 800': {
-                                    region: 'south',
+                            xtype: 'container',
+                            layout: 'border',
+                            items: [
+                                {
+                                    xtype: 'people-list',
+                                    region: 'center',
                                     flex: 2
                                 },
-                                'width >= 1000': {
+                                {
+                                    xtype: 'people-detail',
                                     region: 'east',
-                                    flex: 1
+                                    split: true,
+                                    //collapsed: true,
+                                    flex: 1,
+                                    plugins: 'responsive',
+                                    responsiveConfig: {
+                                        'width < 800': {
+                                            region: 'south',
+                                            flex: 2
+                                        },
+                                        'width >= 1000': {
+                                            region: 'east',
+                                            flex: 1
+                                        }
+                                    }
                                 }
-                            }
+                            ]
                         }
                     ]
                 }

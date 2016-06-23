@@ -7,24 +7,35 @@ Ext.define('SenchaCRM.view.main.Controller', {
 
     /**
      * @param {Ext.view.View} component
-     * @param {Ext.data.Model} record
-     * @param {HTMLElement} item
-     * @param {Number} index
-     * @param {Ext.event.Event} e
      */
-    onMenuItemClick: function (component, record, item, index, e) {
-        //if (!record.isLeaf()) {
-        //    return;
-        //}
-        //
+    onMenuItemClick: function (component, selection) {
+        var node = selection.node;
+        if (!node.isLeaf()) {
+            return;
+        }
+
         //var panel = this.lookup('menu-panel');
         //panel.setCollapsed(true);
-        //
-        //var view = this.lookup('main-panel');
-        //view.mask('画面読込中...');
-        //Ext.defer(function () {
-        //    view.unmask();
-        //}, 500);
+
+        var view = this.lookup('application-panel');
+        view.mask('画面読込中...');
+
+        var target;
+        if (node.id === 'contact-summary') {
+            target = Ext.first('contact-summary');
+            if (Ext.isEmpty(target)) {
+                target = Ext.create('SenchaCRM.view.people.Summary');
+                view.add(target);
+            }
+        }
+        else {
+            target = 0;
+        }
+
+        Ext.defer(function () {
+            view.setActiveItem(target);
+            view.unmask();
+        }, 300);
     },
 
     /**
