@@ -14,7 +14,7 @@ Ext.define('SenchaCRM.view.people.Summary', {
         'SenchaCRM.view.people.Chart'
     ],
 
-    title: 'hoge',
+    title: 'コンタクト履歴 > 集計処理',
 
     tbar: [
         {

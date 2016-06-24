@@ -3,6 +3,7 @@ Ext.define('SenchaCRM.view.people.Edit', {
     xtype: 'people-edit',
 
     requires: [
+        'Ext.container.Container',
         'Ext.form.FieldSet',
         'Ext.form.Panel',
         'Ext.form.field.HtmlEditor',
@@ -32,7 +33,7 @@ Ext.define('SenchaCRM.view.people.Edit', {
             width: '50%'
         }
     },
-    //width: 800,
+    //width: '50%',
     layout: 'fit',
     modal: true,
 
@@ -67,89 +68,95 @@ Ext.define('SenchaCRM.view.people.Edit', {
                     xtype: 'form',
                     title: '基本',
                     layout: 'form',
-                    padding: '0 10',
                     scrollable: true,
+                    layout: 'fit',
                     items: [
                         {
-                            xtype: 'component',
-                            style: 'width: 630px; margin: 10px 0;',
-                            bind: {
-                                html: [
-                                    '<img src="resources/images/photos/{person.photo}"',
-                                    ' height="100px"',
-                                    ' style="box-shadow: #c7cdcf 0 1px 0 0;',
-                                    ' border-radius: 3px;',
-                                    ' margin-left: 6px;',
-                                    '"/>'
-                                ].join('')
-                            }
-                        },
-                        {
-                            xtype: 'fieldset',
-                            padding: '0',
-                            //layout: 'form',
-                            defaults: {
-                                width: '100%'
-                            },
+                            xtype: 'container',
+                            padding: '10 20',
                             items: [
                                 {
-                                    xtype: 'textfield',
-                                    reference: 'firstname',
-                                    fieldLabel: '名前（姓）<b style="color:red"> * </b>',
-                                    msgTarget: 'side',
-                                    bind: '{person.lastName}'
+                                    xtype: 'component',
+                                    style: 'width: 630px; margin: 10px 0;',
+                                    bind: {
+                                        html: [
+                                            '<img src="resources/images/photos/{person.photo}"',
+                                            ' height="100px"',
+                                            ' style="box-shadow: #c7cdcf 0 1px 0 0;',
+                                            ' border-radius: 3px;',
+                                            ' margin-left: 6px;',
+                                            '"/>'
+                                        ].join('')
+                                    }
                                 },
                                 {
-                                    xtype: 'textfield',
-                                    reference: 'lastname',
-                                    fieldLabel: '名前（名）<b style="color:red"> * </b>',
-                                    msgTarget: 'side',
-                                    bind: '{person.firstName}'
+                                    xtype: 'fieldset',
+                                    //padding: '0',
+                                    //layout: 'form',
+                                    defaults: {
+                                        width: '100%'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            reference: 'firstname',
+                                            fieldLabel: '名前（姓）<b style="color:red"> * </b>',
+                                            msgTarget: 'side',
+                                            bind: '{person.lastName}'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            reference: 'lastname',
+                                            fieldLabel: '名前（名）<b style="color:red"> * </b>',
+                                            msgTarget: 'side',
+                                            bind: '{person.firstName}'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            fieldLabel: '会社',
+                                            bind: '{person.company}'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            fieldLabel: '肩書き',
+                                            bind: '{person.title}'
+                                        }
+                                    ]
                                 },
                                 {
-                                    xtype: 'textfield',
-                                    fieldLabel: '会社',
-                                    bind: '{person.company}'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    fieldLabel: '肩書き',
-                                    bind: '{person.title}'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'fieldset',
-                            padding: '0',
-                            //layout: 'form',
-                            defaults: {
-                                width: '100%'
-                            },
-                            items: [
-                                {
-                                    xtype: 'textfield',
-                                    fieldLabel: '電話番号',
-                                    bind: '{person.phone}'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    fieldLabel: 'Eメール',
-                                    bind: '{person.email}'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    fieldLabel: 'IM',
-                                    bind: '{person.im}'
-                                },
-                                {
-                                    xtype: 'textfield',
-                                    fieldLabel: 'Webサイト',
-                                    bind: '{person.websites}'
-                                },
-                                {
-                                    xtype: 'textareafield',
-                                    fieldLabel: '特記事項',
-                                    bind: '{person.info}'
+                                    xtype: 'fieldset',
+                                    //padding: '0',
+                                    //layout: 'form',
+                                    defaults: {
+                                        width: '100%'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            fieldLabel: '電話番号',
+                                            bind: '{person.phone}'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            fieldLabel: 'Eメール',
+                                            bind: '{person.email}'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            fieldLabel: 'IM',
+                                            bind: '{person.im}'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            fieldLabel: 'Webサイト',
+                                            bind: '{person.websites}'
+                                        },
+                                        {
+                                            xtype: 'textareafield',
+                                            fieldLabel: '特記事項',
+                                            bind: '{person.info}'
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -159,7 +166,7 @@ Ext.define('SenchaCRM.view.people.Edit', {
                     xtype: 'form',
                     title: '最近の活動',
                     layout: 'fit',
-                    scrollable: true,
+                    //scrollable: true,
                     items: [
                         {
                             xtype: 'htmleditor',

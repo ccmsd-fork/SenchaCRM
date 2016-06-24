@@ -146,7 +146,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                                     xtype: 'people-detail',
                                     region: 'east',
                                     split: true,
-                                    //collapsed: true,
+                                    collapsed: true,
                                     flex: 1,
                                     plugins: 'responsive',
                                     responsiveConfig: {
