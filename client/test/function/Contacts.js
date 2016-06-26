@@ -100,10 +100,12 @@ describe("ボタンのステータス", function() {
             { type: "tap", target: "tab[text=\"基本\"]", x: 27, y: 20 },
             { type: "tap", target: "tab[text=\"最近の活動\"]", x: 19, y: 23 },
             function () {
-                ST.screenshot('TAB-1', done);
+                setTimeout(function () {
+                    ST.screenshot('TAB-1', done);
+                }, 1000)
             }
         ]);
-    });
+    }, 30000);
 
     afterEach(function() {
         ST.component('people-edit').and(function (detail) {
