@@ -99,14 +99,14 @@ Ext.define('SenchaCRM.view.people.Edit', {
                                     items: [
                                         {
                                             xtype: 'textfield',
-                                            reference: 'firstname',
+                                            reference: 'lastname',
                                             fieldLabel: '名前（姓）<b style="color:red"> * </b>',
                                             msgTarget: 'side',
                                             bind: '{person.lastName}'
                                         },
                                         {
                                             xtype: 'textfield',
-                                            reference: 'lastname',
+                                            reference: 'firstname',
                                             fieldLabel: '名前（名）<b style="color:red"> * </b>',
                                             msgTarget: 'side',
                                             bind: '{person.firstName}'
