@@ -84,19 +84,6 @@ Ext.define('SenchaCRM.view.people.Controller', {
                 me.doBack();
             }
         });
-    },
-
-    /**
-     * @param {Ext.selection.RowModel} component
-     * @param {Ext.data.Model} record
-     */
-    onSelectRecord: function (component, record) {
-        var detail = Ext.first('people-detail'),
-            vm = detail.getViewModel();
-
-        vm.setData({
-            person: record
-        });
     }
 
 });
