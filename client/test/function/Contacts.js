@@ -14,11 +14,12 @@ describe("レコードの基本操作", function() {
                     button.click();
                 });
             });
-        });
+        })
     });
 
     it("レコードの取得できること", function() {
         ST.grid('people-list > gridpanel').
+        wait(500).
         rowAt(0).and(function (row) {
             expect(row.record.get('lastName')).toBe('Sencha');
             expect(row.record.get('firstName')).toBe('太郎');

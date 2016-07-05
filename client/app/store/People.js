@@ -18,6 +18,7 @@ Ext.define('SenchaCRM.store.People', {
     proxy: {
         type: 'rest',
         url: 'http://localhost:8088/people',
+        //url: 'http://192.168.11.2:8088/people',
         limitParam: 'size',
         reader: {
             type: 'json',
