@@ -28,6 +28,13 @@ Ext.define('SenchaCRM.view.main.Controller', {
                 view.add(target);
             }
         }
+        else if (node.id === 'philogl') {
+            target = Ext.first('philogl');
+            if (Ext.isEmpty(target)) {
+                target = Ext.create('SenchaCRM.view.people.PhiloGL');
+                view.add(target);
+            }
+        }
         else {
             target = 0;
         }
