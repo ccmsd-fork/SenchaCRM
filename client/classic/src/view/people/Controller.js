@@ -122,6 +122,25 @@ Ext.define('SenchaCRM.view.people.Controller', {
      * @param {Ext.data.Model} record
      */
     onSelectRecord: function (component, record) {
+        debugger;
+        var detail = Ext.first('people-detail'),
+            vm = detail.getViewModel();
+
+        vm.setData({
+            person: record
+        });
+    },
+
+    /**
+     * @param {Ext.selection.Model} component
+     * @param {Ext.data.Model[]} selected
+     */
+    onSelectionChange: function (component, selected) {
+        if (selected.length === 0) {
+            return;
+        }
+        var record = selected[selected.length - 1];
+
         var detail = Ext.first('people-detail'),
             vm = detail.getViewModel();
 

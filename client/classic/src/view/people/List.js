@@ -12,12 +12,14 @@ Ext.define('SenchaCRM.view.people.List', {
         'Ext.grid.Panel',
         'Ext.grid.column.Action',
         'Ext.grid.plugin.CellEditing',
+        'Ext.grid.plugin.Clipboard',
+        'Ext.grid.selection.Replicator',
         'Ext.layout.container.Fit',
         'Ext.toolbar.Fill',
         'Ext.toolbar.Paging',
         'SenchaCRM.view.people.Controller',
-        'SenchaCRM.view.people.Model',
-        'SenchaCRM.view.people.Edit'
+        'SenchaCRM.view.people.Edit',
+        'SenchaCRM.view.people.Model'
     ],
 
     xtype: 'people-list',
@@ -35,13 +37,29 @@ Ext.define('SenchaCRM.view.people.List', {
         {
             xtype: 'gridpanel',
             store: 'People',
-            plugins: {
-                ptype: 'cellediting',
-                clicksToEdit: 1,
+            selModel: {
+                type: 'spreadsheet',
+                // Disables sorting by header click, though it will be still available via menu
+                //columnSelect: true,
+                //checkboxSelect: true,
+                //pruneRemoved: false,
+                extensible: 'y',
+                rowSelect: false,
                 listeners: {
-                    'edit': 'onUpdateRecord'
+                    selectionchange: 'onSelectionChange'
                 }
             },
+            plugins: [
+                'clipboard',
+                'selectionreplicator',
+                {
+                    ptype: 'cellediting',
+                    clicksToEdit: 2,
+                    listeners: {
+                        'edit': 'onUpdateRecord'
+                    }
+                }
+            ],
             listeners: {
                 select: 'onSelectRecord'
             },
