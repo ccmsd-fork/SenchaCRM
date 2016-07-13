@@ -117,6 +117,7 @@ Ext.define('SenchaCRM.view.main.Main', {
                             listeners: {
                                 itemclick: 'onMenuItemClick',
                                 afterrender: 'onAfterRenderMenu',
+                                // TODO: This handler breaks the application on IE8...
                                 resize: {
                                     fn: 'onResizeTreeList',
                                     element: 'element',

@@ -122,7 +122,6 @@ Ext.define('SenchaCRM.view.people.Controller', {
      * @param {Ext.data.Model} record
      */
     onSelectRecord: function (component, record) {
-        debugger;
         var detail = Ext.first('people-detail'),
             vm = detail.getViewModel();
 
