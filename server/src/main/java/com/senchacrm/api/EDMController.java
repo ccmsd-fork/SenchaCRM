@@ -31,6 +31,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 import org.springframework.util.StreamUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,6 +41,7 @@ import com.senchacrm.odata.exception.EdmException;
  * @author rohitghatol
  *
  */
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("odata")
 public class EDMController {

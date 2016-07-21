@@ -2,8 +2,9 @@ Ext.define('SenchaCRM.store.People', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'SenchaCRM.model.Person',
-        'Ext.data.proxy.Rest'
+        'Ext.data.proxy.OData',
+        'Ext.data.proxy.Rest',
+        'SenchaCRM.model.Person'
     ],
 
     model: 'SenchaCRM.model.Person',
@@ -15,16 +16,31 @@ Ext.define('SenchaCRM.store.People', {
 
     pageSize: 20,
 
+    // From Database
+    //proxy: {
+    //    type: 'rest',
+    //    url: 'http://localhost:8088/people',
+    //    limitParam: 'size',
+    //    reader: {
+    //        type: 'json',
+    //        rootProperty: 'content',
+    //        totalProperty: 'totalElements'
+    //    },
+    //    writer: {
+    //        writeAllFields: true,
+    //        writeRecordId: false
+    //    }
+    //},
+
+    // From OData API
     proxy: {
-        type: 'rest',
-        url: 'http://localhost:8088/people',
-        //url: 'http://192.168.11.2:8088/people',
-        limitParam: 'size',
-        reader: {
-            type: 'json',
-            rootProperty: 'content',
-            totalProperty: 'totalElements'
-        },
+        type: 'odata',
+        serviceRoot: 'http://localhost:8088/odata/',
+        url: 'Products',
+        //reader: {
+        //    type: 'json',
+        //    rootProperty: 'd.results'
+        //},
         writer: {
             writeAllFields: true,
             writeRecordId: false

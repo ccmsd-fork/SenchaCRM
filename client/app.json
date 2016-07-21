@@ -14,7 +14,8 @@
     "requires": [
         "font-awesome",
         "ext-locale",
-        "sencha-charts"
+        "sencha-charts",
+        "sencha-odata"
     ],
     "locale": "ja",
     "fashion": {
