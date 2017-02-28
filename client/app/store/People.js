@@ -17,35 +17,35 @@ Ext.define('SenchaCRM.store.People', {
     pageSize: 20,
 
     // From Database
-    //proxy: {
-    //    type: 'rest',
-    //    url: 'http://localhost:8088/people',
-    //    limitParam: 'size',
-    //    reader: {
-    //        type: 'json',
-    //        rootProperty: 'content',
-    //        totalProperty: 'totalElements'
-    //    },
-    //    writer: {
-    //        writeAllFields: true,
-    //        writeRecordId: false
-    //    }
-    //},
+    proxy: {
+       type: 'rest',
+       url: 'http://localhost:8088/people',
+       limitParam: 'size',
+       reader: {
+           type: 'json',
+           rootProperty: 'content',
+           totalProperty: 'totalElements'
+       },
+       writer: {
+           writeAllFields: true,
+           writeRecordId: false
+       }
+    },
 
     // From OData API
-    proxy: {
-        type: 'odata',
-        serviceRoot: 'http://localhost:8088/odata/',
-        url: 'Products',
-        //reader: {
-        //    type: 'json',
-        //    rootProperty: 'd.results'
-        //},
-        writer: {
-            writeAllFields: true,
-            writeRecordId: false
-        }
-    },
+    // proxy: {
+    //     type: 'odata',
+    //     serviceRoot: 'http://localhost:8088/odata/',
+    //     url: 'Products',
+    //     //reader: {
+    //     //    type: 'json',
+    //     //    rootProperty: 'd.results'
+    //     //},
+    //     writer: {
+    //         writeAllFields: true,
+    //         writeRecordId: false
+    //     }
+    // },
 
     listeners: {
         /**

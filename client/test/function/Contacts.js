@@ -4,6 +4,10 @@ describe("レコードの基本操作", function() {
         Ext.first('people-detail').setCollapsed(true);
     });
 
+    var getRecord = function(index) {
+        return Ext.getStore('People').getAt(index);
+    }
+
     it("レコードを新規追加できること", function() {
         ST.button('[text=\'追加\']').click().and(function () {
             ST.textField('[reference=lastname]').focus().type('Sencha');
@@ -21,8 +25,9 @@ describe("レコードの基本操作", function() {
         ST.grid('people-list > gridpanel').
         wait(500).
         rowAt(0).and(function (row) {
-            expect(row.record.get('lastName')).toBe('Sencha');
-            expect(row.record.get('firstName')).toBe('太郎');
+            var record = getRecord(row.getData('recordIndex'));
+            expect(record.get('lastName')).toBe('Sencha');
+            expect(record.get('firstName')).toBe('太郎');
         })
     });
 
@@ -38,11 +43,12 @@ describe("レコードの基本操作", function() {
                     button.click();
                 });
             });
-        }).and(function () {
+        }).wait(500).and(function () {
             ST.grid('people-list > gridpanel').
             rowAt(0).and(function (row) {
-                expect(row.record.get('lastName')).toBe('Sencha');
-                expect(row.record.get('firstName')).toBe('花子');
+                var record = getRecord(row.getData('recordIndex'));
+                expect(record.get('lastName')).toBe('Sencha');
+                expect(record.get('firstName')).toBe('花子');
             })
         });
     });
@@ -60,14 +66,15 @@ describe("レコードの基本操作", function() {
         }).and(function () {
             ST.grid('people-list > gridpanel').
             rowAt(0).and(function (row) {
-                expect(row.record.get('lastName')).not.toBe('Sencha');
-                expect(row.record.get('firstName')).not.toBe('花子');
+                var record = getRecord(row.getData('recordIndex'));
+                expect(record.get('lastName')).not.toBe('Sencha');
+                expect(record.get('firstName')).not.toBe('花子');
             })
         });
     });
 });
 
-describe("ボタンのステータス", function() {
+xdescribe("ボタンのステータス", function() {
     beforeEach(function() {
         Ext.first('people-detail').setCollapsed(true);
         
@@ -92,7 +99,24 @@ describe("ボタンのステータス", function() {
                 });
           });
     });
-    
+
+    afterEach(function() {
+        ST.component('people-edit').and(function (detail) {
+            detail.close();
+        });
+    });
+});
+
+xdescribe("画面操作", function() {
+    beforeEach(function() {
+        Ext.first('people-detail').setCollapsed(true);
+        
+        ST.grid('people-list > gridpanel').
+        rowAt(0).
+        cellAt(0).
+        click();
+    });
+
     it("タブ切り替えできること", function(done) {
         ST.play([
             { type: "tap", target: "tab[text=\"最近の活動\"]", x: 18, y: 31 },
@@ -102,7 +126,7 @@ describe("ボタンのステータス", function() {
             { type: "tap", target: "tab[text=\"最近の活動\"]", x: 19, y: 23 },
             function () {
                 setTimeout(function () {
-                    ST.screenshot('TAB-1', done);
+                    ST.screenshot('画像比較 A-1', done);
                 }, 1000)
             }
         ]);
