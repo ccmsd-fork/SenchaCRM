@@ -1,6 +1,6 @@
 # Sencha CRM
 
-Open-source CRM application powered by latest [Sencha](https://www.sencha.com/) web technologies.
+Open Source CRM application powered by latest [Sencha](https://www.sencha.com/) web technologies.
 
 <img src="http://senchacrm.com/images/logo.png" alt="SenchaCRM" width="150"/>
 
