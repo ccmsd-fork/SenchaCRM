@@ -30,12 +30,6 @@ Ext.define('SenchaCRM.store.Menus', {
                         iconCls: "x-fa fa-pie-chart",
                         leaf: true
                     }
-                    //{
-                    //    id: 'philogl',
-                    //    text: 'リアルタイム3D',
-                    //    iconCls: "x-fa fa-file-video-o",
-                    //    leaf: true
-                    //}
                 ]
             },
             {

@@ -17,3 +17,7 @@ client/bootstrap.js
 client/classic.json
 client/modern.json
 client/.tern-port
+
+# Deploy
+server/src/main/resources/public/build
+

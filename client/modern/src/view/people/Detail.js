@@ -1,5 +1,5 @@
 Ext.define('SenchaCRM.view.people.Detail', {
-    extend: 'Ext.form.Panel',
+    extend: 'Ext.Container',
     xtype: 'people-detail',
 
     requires: [
@@ -51,6 +51,8 @@ Ext.define('SenchaCRM.view.people.Detail', {
             items: [
                 {
                     title: '基本情報',
+                    scrollable: true,
+
                     items: [
                         {
                             xtype: 'component',
@@ -96,6 +98,8 @@ Ext.define('SenchaCRM.view.people.Detail', {
                 },
                 {
                     title: '詳細',
+                    scrollable: true,
+
                     items: [
                         {
                             xtype: 'fieldset',
@@ -131,61 +135,6 @@ Ext.define('SenchaCRM.view.people.Detail', {
                 }
             ]
         }
-        //{
-        //    xtype: 'fieldset',
-        //    items: [
-        //        {
-        //            xtype: 'textfield',
-        //            label: '姓',
-        //            bind: '{person.lastName}'
-        //        },
-        //        {
-        //            xtype: 'textfield',
-        //            label: '名',
-        //            bind: '{person.firstName}'
-        //        },
-        //        {
-        //            xtype: 'textfield',
-        //            label: '会社',
-        //            bind: '{person.company}'
-        //        },
-        //        {
-        //            xtype: 'textfield',
-        //            label: '肩書き',
-        //            bind: '{person.title}'
-        //        }
-        //    ]
-        //},
-        //{
-        //    xtype: 'fieldset',
-        //    items: [
-        //        {
-        //            xtype: 'textfield',
-        //            label: '電話',
-        //            bind: '{person.phone}'
-        //        },
-        //        {
-        //            xtype: 'textfield',
-        //            label: 'Eメール',
-        //            bind: '{person.email}'
-        //        },
-        //        {
-        //            xtype: 'textfield',
-        //            label: 'IM',
-        //            bind: '{person.im}'
-        //        },
-        //        {
-        //            xtype: 'textfield',
-        //            label: 'Webサイト',
-        //            bind: '{person.websites}'
-        //        },
-        //        {
-        //            xtype: 'textareafield',
-        //            label: '特記事項',
-        //            bind: '{person.info}'
-        //        }
-        //    ]
-        //}
     ],
     listeners: {
         change: {

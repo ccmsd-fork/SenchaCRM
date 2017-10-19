@@ -15,11 +15,5 @@ Ext.define('SenchaCRM.view.people.Model', {
             info: ' '
         }
     }
-    //formulas: {
-    //    storeEditing: function () {
-    //        var store = Ext.getStore('People');
-    //        return store.getUpdatedRecords().length === 0;
-    //    }
-    //}
 });
 

@@ -52,8 +52,13 @@ Ext.define('SenchaCRM.view.people.Controller', {
         });
 
         Ext.defer(function () {
-            page.down('people-detail').getScrollable().scrollTo(0, 0);
-            page.down('people-detail').down('tabpanel').setActiveItem(0);
+            var detail = page.down('people-detail');
+            detail.query('container[title!=""]').forEach(function (p) {
+                if (p.getScrollable()) {
+                    p.getScrollable().scrollTo(0, 0);
+                }
+            });
+            detail.down('tabpanel').setActiveItem(0);
         }, 500);
     },
 

@@ -13,9 +13,8 @@
     "framework": "ext",
     "requires": [
         "font-awesome",
-        "ext-locale",
-        "sencha-charts",
-        "sencha-odata"
+//        "ext-locale",
+        "sencha-charts"
     ],
     "locale": "ja",
     "fashion": {
@@ -152,7 +151,7 @@
         },
         "modern": {
             "toolkit": "modern",
-            "theme": "theme-triton",
+            "theme": "theme-material",
             "sass": {}
         }
     },

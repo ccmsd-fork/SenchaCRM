@@ -1,2 +1,0 @@
-# sencha-odata - Read Me
-

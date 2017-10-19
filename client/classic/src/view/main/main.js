@@ -174,7 +174,7 @@ Ext.define('SenchaCRM.view.main.Main', {
             items: [
                 {
                     xtype: 'label',
-                    html: '<div align="center" style="margin-top:.6em;">© 2016 SenchaCRM</div>'
+                    html: '<div align="center" style="margin-top:.6em;">© 2017 SenchaCRM</div>'
                 }
             ]
         }
