@@ -2,15 +2,13 @@
 
 Open-source CRM application powered by latest [Sencha](https://www.sencha.com/) web technologies.
 
-<img src="http://senchacrm.com/images/logo.png" alt="SenchaCRM" width="150"/>
+<img src="hero.gif" alt="SenchaCRM" width="150"/>
 
-The demo site is here: [SenchaCRM on Heroku](https://senchacrm.herokuapp.com/)
+The demo site is here: [SenchaCRM on Heroku](https://senchacrm-demo.herokuapp.com)
 
 <img src="http://senchacrm.com/images/hero.png" alt="SenchaCRM" width="500"/>
 
 # REQUIREMENTS
-
-### RUN
 
 1. [Sencha Ext JS 6.5.2](https://www.sencha.com/products/extjs/evaluate/)
 2. [Sencha Cmd 6.5.2](https://www.sencha.com/products/extjs/cmd-download/)
@@ -26,7 +24,7 @@ Clone the repository.
 
 ## Server
 
-Create database named "senchacrm" on your PostgreSQL DB, and update `src/main/resources/application.yml` to fit your environment.
+Create database named "senchacrm" on your PostgreSQL, and update `src/main/resources/application.yml` to fit your environment.
 
     datasource:
       ...

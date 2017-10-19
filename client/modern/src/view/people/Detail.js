@@ -51,7 +51,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
             items: [
                 {
                     title: '基本情報',
-                    scrollable: true,
+                    scrollable: 'vertical',
 
                     items: [
                         {
@@ -98,7 +98,7 @@ Ext.define('SenchaCRM.view.people.Detail', {
                 },
                 {
                     title: '詳細',
-                    scrollable: true,
+                    scrollable: 'vertical',
 
                     items: [
                         {
