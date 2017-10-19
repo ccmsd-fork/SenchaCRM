@@ -2,6 +2,8 @@
 
 Open-source CRM application powered by latest [Sencha](https://www.sencha.com/) web technologies.
 
+<img src="http://senchacrm.com/images/logo.png" alt="SenchaCRM" width="150"/>
+
 The demo site is here: [SenchaCRM on Heroku](https://senchacrm-demo.herokuapp.com)
 
 <img src="hero.gif" alt="SenchaCRM" width="500"/>
